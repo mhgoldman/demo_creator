@@ -1,0 +1,11 @@
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
+<h1>New Environment Request</h1>
+<%= simple_form_for @environment_request do |f| %>
+	<%= f.association :template %>
+	<%= f.input :email %>
+	<%= f.input :description %>
+	<%= f.button :submit %>
+<% end %>

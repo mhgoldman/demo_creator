@@ -1,0 +1,2 @@
+module EnvironmentRequestsHelper
+end
