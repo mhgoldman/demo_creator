@@ -27,31 +27,31 @@ class SkytapAPI
   HttpLog.options[:logger] = Rails.logger
   HttpLog.options[:log_headers] = true
 
-  def self.post(url, body=nil, user=nil, pass=nil)
-    api_call(:post, url, body, 0, user, pass)
+  def self.post(url, body=nil)
+    api_call(:post, url, body, 0)
   end
 
-  def self.put(url, body=nil, user=nil, pass=nil)
-    api_call(:put, url, body, 0, user, pass)
+  def self.put(url, body=nil)
+    api_call(:put, url, body, 0)
   end
 
-  def self.get(url, user=nil, pass=nil)
-    api_call(:get, url, nil, 0, user, pass)
+  def self.get(url)
+    api_call(:get, url, nil, 0)
   end
 
   private
 
-  def self.api_call(method, url, body=nil, retries=0, user=nil, pass=nil)
-    Rails.logger.info("Skytap API Request: Method: #{method}, URL: #{url}, Body: #{body}, Retries: #{retries}, User: #{user}")
+  def self.api_call(method, url, body=nil, retries=0)
+    Rails.logger.info("Skytap API Request: Method: #{method}, URL: #{url}, Body: #{body}, Retries: #{retries}")
 
-    #TODO: Changed this to ||= so we can use different user credentials to workaround the scheduler thing.
-    #Ideally, change this back since we're doing too much build/teardown now.
-    @api = RestClient::Resource.new(ENV['skytap_api_url'],
-      user: user || ENV['skytap_api_user'],
-      password: pass || ENV['skytap_api_key'],
+    @api ||= RestClient::Resource.new(ENV['skytap_api_url'],
+      user: ENV['skytap_api_user'],
+      password: ENV['skytap_api_key'],
       headers: {accept: :json, content_type: :json}
     )
 
+    uri = URI(url)
+    url = uri.path + (uri.query ? "?#{uri.query}" : "")
     url = url[1..-1] if url.start_with?('/')
 
     begin

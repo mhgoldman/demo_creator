@@ -1,11 +1,10 @@
-class CreateEnvironmentRequests < ActiveRecord::Migration
+class CreateDemos < ActiveRecord::Migration
   def change
-    create_table :environment_requests do |t|
+    create_table :demos do |t|
       t.integer :template_id
       t.string :description
       t.integer :requestor_id
-      t.boolean :confirmed
-      t.string :status
+      t.integer :status
       t.string :token
       t.string :published_url
       t.datetime :confirmation_expiration

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'environment_requests#new'
+  root 'demos#new'
 
-  resources :environment_requests, param: :token
+  resources :demos, param: :token
 
   #  do
   #   member do

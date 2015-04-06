@@ -54,3 +54,4 @@ gem 'whenever', require: false
 gem 'recursive-open-struct'
 gem 'erubis'
 
+gem 'pry-rails', :group => :development

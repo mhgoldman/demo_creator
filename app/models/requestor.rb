@@ -1,13 +1,18 @@
-class Requestor < ActiveRecord::Base
-	has_many :environment_requests
-	validates :email, presence: true
-	validates :skytap_url, presence: true
+require 'skytap_api'
 
-	before_save :create_user
+class Requestor < ActiveRecord::Base
+	has_many :demos
+	validates :email, presence: true
 
   private
 
-  def create_user
+  def skytap_url
+    self.skytap_url || (self.skytap_url = create_skytap_user)
+  end
+
+  def create_skytap_user
+    return if skytap_url
+
     user_obj = SkytapAPI.post("users",
       login_name: login_name,
       first_name: first_name,
@@ -16,8 +21,19 @@ class Requestor < ActiveRecord::Base
       email: ENV['shadow_users_email']
     )
 
-		#TODO NEED TO AADD TO DEPARTMENT AND APPLY QUOTAS
-    update(skytap_url: user_obj.url)
+    SkytapAPI.post("departments/#{ENV['shadow_users_dept_id']}/users/#{user_obj.id}") if ENV['shadow_users_dept_id']
+    
+    { "cumulative_svms" => ENV['shadow_user_svm_hours_monthly_quota'],
+      "concurrent_svms" => ENV['shadow_user_concurrent_svms_quota'],
+      "concurrent_storage_size" => ENV['shadow_users_storage_quota_mb']
+    }.each do |quota_name, quota_value|
+      SkytapAPI.post("users/#{user_obj.id}/quotas",
+        name: quota_name,
+        limit: quota_value
+      ) if quota_value
+    end 
+
+    update(skytap_url: user_obj.url)    
   end
 
   def neutralized_email

@@ -13,12 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20150324215657) do
 
-  create_table "environment_requests", force: :cascade do |t|
+  create_table "demos", force: :cascade do |t|
     t.integer  "template_id"
     t.string   "description"
     t.integer  "requestor_id"
-    t.boolean  "confirmed"
-    t.string   "status"
+    t.integer  "status"
     t.string   "token"
     t.string   "published_url"
     t.datetime "confirmation_expiration"
