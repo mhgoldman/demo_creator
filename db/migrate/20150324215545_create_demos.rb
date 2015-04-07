@@ -9,7 +9,7 @@ class CreateDemos < ActiveRecord::Migration
       t.string :published_url
       t.datetime :confirmation_expiration
       t.datetime :usage_expiration
-
+      t.integer :skytap_id
       t.timestamps null: false
     end
   end

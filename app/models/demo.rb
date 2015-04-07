@@ -8,15 +8,20 @@ class Demo < ActiveRecord::Base
 
 	enum status: [:pending, :confirmed, :provisioning, :provisioned]
 
-	validates :email, presence: true
 	validates :template_id, presence: true
 	validates :requestor_id, presence: true
+	validates :email, presence: true
 
 	before_validation :set_requestor
-	before_save :set_token, :set_expirations, :set_pending
+	before_save :set_token, :set_expirations
+	before_create :set_pending
 
 	def url
 		Rails.application.routes.url_helpers.demo_url(token)
+	end
+
+	def provision_later
+		ProvisionDemoJob.perform_later(self)
 	end
 
 	def provision!
@@ -25,6 +30,10 @@ class Demo < ActiveRecord::Base
 		config = SkytapAPI.post('configurations', 
 			template_id: template.skytap_id
 		)
+
+		update(skytap_id: config.id)
+
+		update(published_url: config.publish_sets.first.desktops_url) if config.publish_sets.length > 0
 
     SkytapAPI.post("schedules",
       title: "Schedule for #{config.name} - [#{config.id}]",
@@ -38,8 +47,11 @@ class Demo < ActiveRecord::Base
     SkytapAPI.post("tunnels?source_network_id=#{config.networks.first.id}&target_network_id=#{ENV['global_network_id']}") if ENV['global_network_id']
 
 		SkytapAPI.put(config.url,
+			owner: requestor.get_skytap_url
+		)
+
+		SkytapAPI.put(config.url,
 			name: name,
-			owner: requestor.skytap_url,
 			runstate: "running"
 		)
 

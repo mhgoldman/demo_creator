@@ -4,15 +4,14 @@ class Requestor < ActiveRecord::Base
 	has_many :demos
 	validates :email, presence: true
 
-  private
-
-  def skytap_url
-    self.skytap_url || (self.skytap_url = create_skytap_user)
+#TODO ick
+  def get_skytap_url
+    self.skytap_url ||= create_skytap_user
   end
 
-  def create_skytap_user
-    return if skytap_url
+  private
 
+  def create_skytap_user
     user_obj = SkytapAPI.post("users",
       login_name: login_name,
       first_name: first_name,
@@ -20,6 +19,8 @@ class Requestor < ActiveRecord::Base
       password: SecureRandom.hex,
       email: ENV['shadow_users_email']
     )
+
+    update(skytap_url: user_obj.url)
 
     SkytapAPI.post("departments/#{ENV['shadow_users_dept_id']}/users/#{user_obj.id}") if ENV['shadow_users_dept_id']
     
@@ -33,7 +34,7 @@ class Requestor < ActiveRecord::Base
       ) if quota_value
     end 
 
-    update(skytap_url: user_obj.url)    
+    self.skytap_url
   end
 
   def neutralized_email

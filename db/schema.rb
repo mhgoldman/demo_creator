@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324215657) do
+ActiveRecord::Schema.define(version: 20150407145259) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "demos", force: :cascade do |t|
     t.integer  "template_id"
@@ -22,8 +25,19 @@ ActiveRecord::Schema.define(version: 20150324215657) do
     t.string   "published_url"
     t.datetime "confirmation_expiration"
     t.datetime "usage_expiration"
+    t.integer  "skytap_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "que_jobs", primary_key: "queue", force: :cascade do |t|
+    t.integer  "priority",    limit: 2, default: 100,                                        null: false
+    t.datetime "run_at",                default: "now()",                                    null: false
+    t.integer  "job_id",      limit: 8, default: "nextval('que_jobs_job_id_seq'::regclass)", null: false
+    t.text     "job_class",                                                                  null: false
+    t.json     "args",                  default: [],                                         null: false
+    t.integer  "error_count",           default: 0,                                          null: false
+    t.text     "last_error"
   end
 
   create_table "requestors", force: :cascade do |t|

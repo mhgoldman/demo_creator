@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :demos, param: :token
 
+  require "que/web"
+  mount Que::Web => "/que"
+
   #  do
   #   member do
   #     get 'confirm/:token', action: :confirm, as: :confirm
