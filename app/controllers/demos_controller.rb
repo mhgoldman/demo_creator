@@ -6,7 +6,7 @@ class DemosController < ApplicationController
   def create
     @demo = Demo.new(demo_params)
     if @demo.save
-      DemoConfirmationMailer.confirmation_email(@demo).deliver_later(queue: '')
+      DemoConfirmationMailer.confirmation_email(@demo).deliver_later(queue: '') #Que uses blank queue name
       redirect_to root_path, notice: 'OK, check your email.'
     else
       flash[:alert] = "Nope, try again."
@@ -24,7 +24,6 @@ class DemosController < ApplicationController
     elsif @demo.provisioning?
       render text: "hold your horses, i'm working on it."
     elsif @demo.provisionable?
-      # DELAY @demo.provision!
       @demo.provision_later
       render text: "started provisioning, refresh this page for updates."
     else #expired?
