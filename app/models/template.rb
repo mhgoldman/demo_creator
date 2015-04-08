@@ -22,4 +22,8 @@ class Template < ActiveRecord::Base
 
 		all
 	end
+
+	def self.pull_later
+		PullTemplatesJob.perform_later
+	end
 end
