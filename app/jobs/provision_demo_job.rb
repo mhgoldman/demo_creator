@@ -1,6 +1,4 @@
-class ProvisionDemoJob < ActiveJob::Base
-  queue_as :'' #Que uses blank queue name
-
+class ProvisionDemoJob < ApplicationJob
   def perform(demo)
   	#TODO! PRevent infinite unrecoverable retries!
   	demo.provision!

@@ -42,15 +42,16 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'rspec-rails'
+  gem 'vcr'  
 end
 
 gem 'simple_form'
 gem 'figaro'
 gem 'httplog'
 gem 'rest-client'
-gem 'rspec'
 #gem 'webmock'
-gem 'vcr'
 gem 'whenever', require: false
 gem 'recursive-open-struct'
 gem 'erubis'

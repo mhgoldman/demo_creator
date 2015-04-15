@@ -6,7 +6,7 @@ class DemosController < ApplicationController
   def create
     @demo = Demo.new(demo_params)
     if @demo.save
-      DemoConfirmationMailer.confirmation_email(@demo).deliver_later(queue: '') #Que uses blank queue name
+      DemoConfirmationMailer.confirmation_email(@demo).deliver_later(queue: ApplicationJob::DEFAULT_QUEUE) #Que uses blank queue name
       redirect_to root_path, notice: 'OK, check your email.'
     else
       flash[:alert] = "Nope, try again."
