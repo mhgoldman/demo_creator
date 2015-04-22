@@ -1,0 +1,285 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users
+    body:
+      encoding: UTF-8
+      string: '{"login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","password":"1617efc2dfe6b324dbf69331639c1bc1","email":"me@mgoldman.com"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '215'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 22 Apr 2015 01:34:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - b74fbe984ca486e771b068ed5d601791
+      Location:
+      - https://cloud.skytap.com/users/113450
+      Set-Cookie:
+      - _cloud_session=xyz;
+        path=/; secure
+      X-Rack-Cache:
+      - invalidate, pass
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"e70872ec286bd320301ac3ab045e7f8d"
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Runtime:
+      - '1.285941'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"113450","url":"https://cloud.skytap.com/users/113450","login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","title":null,"email":"me@mgoldman.com","created_at":"2015-04-21T18:34:30-07:00","deleted":false,"activated":true,"password":"**********","account_role":"standard_user","quotas":[{"id":"concurrent_storage_size","quota_type":"concurrent_storage_size","units":"MB","limit":null,"usage":0},{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":null,"usage":0},{"id":"cumulative_svms","quota_type":"cumulative_svms","units":"hours","limit":null,"usage":0.0},{"id":"concurrent_vms","quota_type":"concurrent_vms","units":"integer","limit":null,"usage":0}],"configurations":[],"templates":[],"assets":[],"lockversion":"53410d020d59ee951f552ff856fb2795d84922d1","can_export":false,"can_import":false,"time_zone":"Pacific
+        Time (US & Canada)","has_public_library":true}'
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 01:34:31 GMT
+- request:
+    method: post
+    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/departments/1110/users/113450
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 22 Apr 2015 01:34:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"9ccb30645abdc628f6a951d299e16d05"
+      X-Request-Id:
+      - ff08ff3a66778eced91631c82401aa86
+      X-Rack-Cache:
+      - invalidate, pass
+      Set-Cookie:
+      - _cloud_session=xyz;
+        path=/; secure
+      X-Runtime:
+      - '1.985580'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"113450","url":"https://cloud.skytap.com/users/113450","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","email":"me@mgoldman.com","title":null,"deleted":false,"account_role":"standard_user","activated":true,"email_validated":false,"last_login":null,"sso_enabled":false,"department_name":"Fake
+        Department","department_id":"1110"}]'
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 01:34:34 GMT
+- request:
+    method: post
+    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users/113450/quotas
+    body:
+      encoding: UTF-8
+      string: '{"name":"cumulative_svms","limit":"1234"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 22 Apr 2015 01:34:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - 2d944e35e87e99b7f14061b66ad0b47e
+      Set-Cookie:
+      - _cloud_session=xyz;
+        path=/; secure
+      X-Rack-Cache:
+      - invalidate, pass
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"d7f39b1c31505ea3a0703f278d3cda3c"
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Runtime:
+      - '0.758340'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"cumulative_svms","quota_type":"cumulative_svms","units":"hours","limit":1234.0,"usage":0.0}'
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 01:34:36 GMT
+- request:
+    method: post
+    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users/113450/quotas
+    body:
+      encoding: UTF-8
+      string: '{"name":"concurrent_svms","limit":"20"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '39'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 22 Apr 2015 01:34:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - 476676a8cbbaa6aaf59739b6e0d37836
+      Set-Cookie:
+      - _cloud_session=xyz;
+        path=/; secure
+      X-Rack-Cache:
+      - invalidate, pass
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"3e4456f79bef78966037b313ec91f71a"
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Runtime:
+      - '0.531653'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":20.0,"usage":0}'
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 01:34:38 GMT
+- request:
+    method: post
+    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users/113450/quotas
+    body:
+      encoding: UTF-8
+      string: '{"name":"concurrent_storage_size","limit":"80000"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '50'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 22 Apr 2015 01:34:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Rack-Cache:
+      - invalidate, pass
+      Etag:
+      - W/"c772739937d1de8735a58d268ce9d8a0"
+      X-Request-Id:
+      - b0fcaa66e455a7d97d7f8db3c5de6729
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Runtime:
+      - '0.810219'
+      Set-Cookie:
+      - _cloud_session=xyz;
+        path=/; secure
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"concurrent_storage_size","quota_type":"concurrent_storage_size","units":"MB","limit":80000.0,"usage":0}'
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 01:34:40 GMT
+recorded_with: VCR 2.9.3

@@ -4,7 +4,6 @@ class Requestor < ActiveRecord::Base
 	has_many :demos
 	validates :email, presence: true
 
-#TODO ick
   def get_skytap_url
     self.skytap_url ||= create_skytap_user
   end

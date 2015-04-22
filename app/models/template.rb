@@ -2,17 +2,20 @@ require 'skytap_api'
 
 class Template < ActiveRecord::Base
 	has_many :demos
+	validates :skytap_id, presence: true
+	validates :name, presence: true
+	validates :region_name, presence: true
 
 	def self.pull
-		current_template_skytap_ids = Template.all.map {|t| t.skytap_id}
+		current_template_skytap_ids = Template.pluck(:skytap_id)
 
 		new_template_info = SkytapAPI.get("projects/#{ENV['templates_project_id']}/templates")
-		new_template_skytap_ids = new_template_info.map {|template_info| template_info.id}
+		new_template_skytap_ids = new_template_info.map {|template_info| template_info.id.to_i}
+
 
 		current_template_skytap_ids.each do |template_skytap_id|
 			unless new_template_skytap_ids.include?(template_skytap_id)
 				Template.find_by(skytap_id: template_skytap_id).destroy
-				current_template_skytap_ids.delete(template_skytap_id)
 			end
 		end
 

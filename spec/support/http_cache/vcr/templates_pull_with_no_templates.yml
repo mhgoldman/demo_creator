@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/projects/37878/templates
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 15 Apr 2015 14:08:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Runtime:
+      - '0.454778'
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 73915960acae3b7762719e7684ba41f1
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"44b9ad2826c1bb0324e143a8cddd18b4"
+      Set-Cookie:
+      - _cloud_session=xyz;
+        path=/; secure
+    body:
+      encoding: ASCII-8BIT
+      string: '[]'
+    http_version: 
+  recorded_at: Wed, 15 Apr 2015 14:08:35 GMT
+recorded_with: VCR 2.9.3
