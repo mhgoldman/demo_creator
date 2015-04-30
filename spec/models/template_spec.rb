@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Template, type: :model do
   context ".pull" do
     it "handles starting with no templates and receiving templates from the server" do
-      VCR.use_cassette("templates_pull_with_3_templates", decode_compressed_response: true) do
+      VCR.use_cassette("templates_pull_with_3_templates") do
         Template.pull
       end
 
@@ -15,7 +15,7 @@ RSpec.describe Template, type: :model do
     end
 
     it "handles starting with no templates and NOT receiving templates from the server" do
-      VCR.use_cassette("templates_pull_with_no_templates", decode_compressed_response: true) do
+      VCR.use_cassette("templates_pull_with_no_templates") do
         Template.pull
       end
 
@@ -28,7 +28,7 @@ RSpec.describe Template, type: :model do
       Template.create!(name: 'test template 1', skytap_id: 12345, region_name: 'US-East')
       Template.create!(name: 'test template 2', skytap_id: 23456, region_name: 'US-West')
 
-      VCR.use_cassette("templates_pull_with_no_templates", decode_compressed_response: true) do
+      VCR.use_cassette("templates_pull_with_no_templates") do
         Template.pull
       end
 
@@ -41,7 +41,7 @@ RSpec.describe Template, type: :model do
       Template.create(name: "Demo Environment Template", skytap_id: 557121, region_name: 'US-East')
       Template.create(name: "Demo Environment Template 2", skytap_id: 557145, region_name: 'US-East')
 
-      VCR.use_cassette("templates_pull_with_3_templates", decode_compressed_response: true) do
+      VCR.use_cassette("templates_pull_with_3_templates") do
         Template.pull
       end
 
@@ -53,7 +53,7 @@ RSpec.describe Template, type: :model do
     it "adds only templates that have been added on the server" do
       Template.create(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
 
-      VCR.use_cassette("templates_pull_with_3_templates", decode_compressed_response: true) do
+      VCR.use_cassette("templates_pull_with_3_templates") do
         Template.pull
       end
 

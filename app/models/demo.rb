@@ -47,7 +47,7 @@ class Demo < ActiveRecord::Base
     SkytapAPI.post("tunnels?source_network_id=#{config.networks.first.id}&target_network_id=#{ENV['global_network_id']}") if ENV['global_network_id']
 
 		SkytapAPI.put(config.url,
-			owner: requestor.get_skytap_url
+			owner: requestor.find_or_create_skytap_url
 		)
 
 		SkytapAPI.put(config.url,
@@ -78,7 +78,7 @@ class Demo < ActiveRecord::Base
 
 	def set_requestor
 		if self.email && !self.requestor
-			self.requestor = Requestor.where(email: email).first || Requestor.create(email: email)
+			self.requestor = Requestor.first_or_create(email: email)
 			self.save
 		elsif !self.email && self.requestor
 			self.email = self.requestor.email

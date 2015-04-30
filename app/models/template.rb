@@ -12,7 +12,6 @@ class Template < ActiveRecord::Base
 		new_template_info = SkytapAPI.get("projects/#{ENV['templates_project_id']}/templates")
 		new_template_skytap_ids = new_template_info.map {|template_info| template_info.id.to_i}
 
-
 		current_template_skytap_ids.each do |template_skytap_id|
 			unless new_template_skytap_ids.include?(template_skytap_id)
 				Template.find_by(skytap_id: template_skytap_id).destroy

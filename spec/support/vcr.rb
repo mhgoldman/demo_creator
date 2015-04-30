@@ -11,6 +11,7 @@
 VCR.configure do |config|
   config.cassette_library_dir = "spec/support/http_cache/vcr"
   config.hook_into :webmock
+  config.default_cassette_options = { decode_compressed_response: true, allow_unused_http_interactions: false }
 
   # Only want VCR to intercept requests to external URLs.
   config.ignore_localhost = true

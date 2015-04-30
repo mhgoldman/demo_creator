@@ -6,5 +6,7 @@ class CreateRequestors < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :requestors, :email, unique: true
   end
 end
