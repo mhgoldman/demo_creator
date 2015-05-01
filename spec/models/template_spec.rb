@@ -68,7 +68,7 @@ RSpec.describe Template, type: :model do
       Template.create(name: "Demo Environment Template 2", skytap_id: 557145, region_name: 'US-East')
       Template.create(name: "This Template Ain't On The Server", skytap_id: 123456, region_name: 'US-East')
 
-      VCR.use_cassette("templates_pull_with_3_templates", decode_compressed_response: true) do
+      VCR.use_cassette("templates_pull_with_3_templates") do
         Template.pull
       end
 

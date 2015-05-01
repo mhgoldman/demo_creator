@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Demo, type: :model do
   context ".create" do
     it "requires an email or requestor to save" do
-      t = Template.create(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
+      t = Template.create!(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
 
       demo = Demo.new(template: t)
       expect(demo).to_not be_valid
@@ -24,8 +24,15 @@ RSpec.describe Demo, type: :model do
       expect(demo.requestor).to eq(demo2.requestor)
     end
 
-    xit "sets the token"
-    xit "sets the expirations"
+    it "sets the token, expirations & status" do
+      t = Template.create(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
+      demo = Demo.create!(template: t, email: 'me@mgoldman.com')
+
+      expect(demo.token.length).to eq(Demo::TOKEN_LENGTH * 2)
+      expect(demo.confirmation_expiration).to be_a(Time)
+      expect(demo.usage_expiration).to be_a(Time)
+      expect(demo).to be_pending
+    end
   end
 
   context ".provision" do
@@ -35,7 +42,7 @@ RSpec.describe Demo, type: :model do
       demo.save!
       demo.confirmed!
 
-      VCR.use_cassette("demo_provisioning", decode_compressed_response: true) do
+      VCR.use_cassette("demo_provisioning") do
         demo.provision!
       end
     end

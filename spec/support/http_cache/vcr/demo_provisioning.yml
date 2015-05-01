@@ -63,7 +63,7 @@ http_interactions:
         7 Enterprise SP1 64-bit - Sysprepped","vm_id":"5243224","network_name":"Network
         1","network_subnet":"10.0.0.0/24","network_id":"2386484","network_type":"automatic","nic_type":"e1000","promiscuous":false}],"notes":[],"labels":[],"credentials":[],"desktop_resizable":true,"local_mouse_cursor":true,"maintenance_lock_engaged":false,"region_backend":"skytap","created_at":"2015/04/22
         05:44:00 -0700","can_change_object_state":true,"configuration_url":"https://cloud.skytap.com/configurations/3889160"}],"networks":[{"id":"2386484","url":"https://cloud.skytap.com/configurations/3889160/networks/2386484","name":"Network
-        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[]}],"lockversion":"19d9bc32b2ef634d86799519ea1cc366dd6515b1","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/99734","publish_sets":[]}'
+        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[]}],"lockversion":"19d9bc32b2ef634d86799519ea1cc366dd6515b1","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/99734","publish_sets":[{"desktops_url":"http://bogus_desktops_url"}]}'
     http_version: 
   recorded_at: Wed, 22 Apr 2015 12:44:02 GMT
 - request:
