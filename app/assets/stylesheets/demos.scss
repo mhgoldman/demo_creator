@@ -12,13 +12,23 @@ $sans-serifs: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation S
 body {
   font-family: $sans-serifs;
   text-align: center; 
+  margin-top: 5em;
+  background-color: rgb(200,200,200);
+}
+
+.container {
+  border: 1px solid black;  
+  display: inline-block;
+  background-color: white;
+  border-radius: 0.75em;
+  padding: 0 1em 1em 1em;
+
 }
 
 .logo {
   text-transform: uppercase;
   letter-spacing: 0.0625em;
   font-size: 1.5em;
-  margin-top: 5em;
 }
 
 .instructions {
@@ -27,32 +37,37 @@ body {
 
 .new_demo {
   text-align: left;
-  margin: 2em auto 0;
-  max-width: 35em;
-  /*background-color: gray;*/
+  margin: 1em auto 0;
+  max-width: 31.5em;
 
-  .input {
-    margin-top: 1em;
-  }
 
   select {
     font-size: 1em;
-    margin: 0.5em;
-    padding: 0.5em;
-    -webkit-appearance: none;
+    margin: 0 0.5em;
+    padding: 0 1.75em 0 0.5em;
+    height: 2.375em;
     width: 25em;
+    -webkit-appearance: none;
+    background-color: white;
+    border: 1px solid rgb(200,200,200);
+    border-radius: 0.375em;
+    background: asset-url('br_down.png') no-repeat;
+    background-position: 23.5em 0.65em;
   }
 
   input {
     font-size: 1em;
-    margin: 0.5em;
+    margin: 0 0 0 0.5em;
     padding: 0.5em;
     width: 25em;
+    border: 1px solid rgb(200,200,200);
+    border-radius: 0.375em;
   }
 
   label {
     width: 5em;
     display: inline-block;
+    margin-top: 2.5em;
   }
 
   button {
@@ -61,10 +76,32 @@ body {
     background-color: lightgreen;
     color: white;
     width: 15em;
-    margin: 2em auto;
+    margin: 2em auto 0 auto;
     border: 0;
     padding: 0.75em;
     display: block;
     letter-spacing: 0.0625em;
+    border-radius: 0.75em;
+  }
+}
+
+@media screen and (max-device-width: 545px) {
+  body  {
+    margin: 0.5em;
+  }
+  .container  {
+    width: 95%;
+  }
+  .new_demo  {
+    select {
+      width: 95%;
+      background-position: 98%;
+    }  
+    input {
+      width: 95%;
+    }
+    button {
+     width: 95%;
+    }
   }
 }
