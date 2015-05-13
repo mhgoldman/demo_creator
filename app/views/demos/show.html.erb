@@ -1,0 +1,10 @@
+<% case @message %>
+<% when :ready %>
+  Please <%= link_to "click here", @url %> to access your environment.
+<% when :provisioning %>
+  Your demo is provisioning. Please refresh this page for updates.
+<% when :started_provisioning %>
+  Your demo has started provisioning. Please refresh this page for updates.
+<% when :expired %>
+  Your demo has expired. You can <%= link_to 'request a new demo', new_demo_path %>.
+<% end %> 

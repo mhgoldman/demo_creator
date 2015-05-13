@@ -9,7 +9,7 @@ class DemosController < ApplicationController
       DemoConfirmationMailer.confirmation_email(@demo).deliver_later(queue: ApplicationJob::DEFAULT_QUEUE) #Que uses blank queue name
       redirect_to root_path, notice: 'OK, check your email.'
     else
-      flash[:alert] = "Nope, try again."
+      flash[:alert] = "Please correct the errors below."
       render 'new'
     end
   end
@@ -20,14 +20,15 @@ class DemosController < ApplicationController
     @demo.confirmed! if @demo.pending?
 
     if @demo.ready? #fulfilled and not expired
-      render text: "ok, here is your environment: #{@demo.published_url}"
+      @message = :ready
+      @url = @demo.published_url
     elsif @demo.provisioning?
-      render text: "hold your horses, i'm working on it."
+      @message = :provisioning
     elsif @demo.provisionable?
       @demo.provision_later
-      render text: "started provisioning, refresh this page for updates."
+      @message = :started_provisioning      
     else #expired?
-      render text: "oh snap, you're expired"
+      @message = :expired
     end
   end
 

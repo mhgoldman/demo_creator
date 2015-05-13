@@ -44,8 +44,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
-  gem 'vcr'  
-  gem 'webmock'  
 
   gem 'capybara'
   gem 'capybara-email'
@@ -61,6 +59,11 @@ gem 'recursive-open-struct'
 gem 'erubis'
 
 gem 'pry-rails', :group => :development
+
+group :test do
+  gem 'vcr'  
+  gem 'webmock'  
+end
 
 gem 'que'
 gem 'que-web'
