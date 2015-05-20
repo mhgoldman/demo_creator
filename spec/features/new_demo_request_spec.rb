@@ -9,7 +9,7 @@ RSpec.feature "DemoRequests", type: :feature do
   scenario "User requests demo with bad info" do
     visit root_path
     click_button 'Create Demo'
-    expect(page).to have_content('Nope, try again')
+    expect(page).to have_content('Please correct the errors below')
   end
 
   scenario 'User requests demo successfully' do
@@ -29,7 +29,7 @@ RSpec.feature "DemoRequests", type: :feature do
     expect(page).to have_content('started provisioning')
 
     visit(current_path)
-    expect(page).to have_content('ok, here is your environment')
+    expect(page).to have_content('to access your environment')
   end
 
   scenario 'User accesses expired demo' do
@@ -49,7 +49,7 @@ RSpec.feature "DemoRequests", type: :feature do
     expect(page).to have_content('started provisioning')
 
     visit(current_path)
-    expect(page).to have_content('ok, here is your environment')
+    expect(page).to have_content('to access your environment')
   end
 
 end
