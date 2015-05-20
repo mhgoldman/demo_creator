@@ -63,6 +63,9 @@ gem 'pry-rails', :group => :development
 group :test do
   gem 'vcr'  
   gem 'webmock'  
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'database_cleaner'  
 end
 
 gem 'que'

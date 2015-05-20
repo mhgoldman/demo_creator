@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'demos#new'
   resources :demos, param: :token, path: '/'
-  resources :templates, only: :index
 
   require "que/web"
   mount Que::Web => "/que"

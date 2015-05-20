@@ -1,17 +1,18 @@
-<h3><%= @description %></h3>
+<div class='description'><%= @description %></div>
 
-<% case @message %>
-<% when :ready %>
-  Please <%= link_to "click here", @url %> to access your environment.
-<% when :provisioning %>
-  Your demo is provisioning. Please refresh this page for updates.
-<% when :started_provisioning %>
-  Your demo has started provisioning. Please refresh this page for updates.
-<% when :expired %>
-  Your demo has expired. You can <%= link_to 'request a new demo', new_demo_path %>.
-<% when :error %>
-  An error has occurred. Please contact your administrator or <%= link_to 'request a new demo', new_demo_path %>.
+<div class='instructions'>
+  <span data-status="ready" style="<%= @demo.ready? ? '' : 'display:none;'%>">Your demo is available for use.</span>
+  <span data-status="provisioning" style="<%= @demo.provisioning? ? '' : 'display:none;'%>">Your demo is provisioning, please wait...</span>
+  <span data-status="expired" style="<%= @demo.expired? ? '' : 'display:none;'%>">Your demo has expired. You can <%= link_to 'request a new demo', new_demo_path %>.</span>
+  <span data-status="error" style="<%= @demo.error? ? '' : 'display:none;'%>">An error has occurred. Please contact your administrator or <%= link_to 'request a new demo', new_demo_path %>.
   <br/>
   <br/>
-  <%= @error %>
-<% end %> 
+  <span data-status="error" id="error_text"><%= @error %></span>
+</div>
+
+<button data-status="ready" class="big_button" type="submit" onclick="window.location='<%= @demo.published_url %>'" style="<%= @demo.ready? ? '' : 'display:none;'%>">Access Demo</button>
+<%= image_tag 'spinner.gif', class: :spinner, data: { status: 'provisioning'}, style: (@demo.provisioning? ? '' : 'display:none') %>
+<% # TODO, This sucks, do something %>
+<% if @demo.provisioning? %>
+<script>$(document).ready(maintainStatus);</script>
+<% end %>

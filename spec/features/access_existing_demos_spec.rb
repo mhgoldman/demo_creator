@@ -27,11 +27,27 @@ RSpec.feature "AccessExistingDemos", type: :feature do
     expect(page).to have_content("Your demo is provisioning")
   end
 
-  scenario "User access existing demo successfully" do
+  scenario "User accesses existing demo successfully" do
     @demo.update!(status: :provisioned, skytap_id: 123456, published_url: 'http://bogus/url')
 
     visit(@demo.url)
     expect(page).to have_content("to access your environment")
     expect(page).to have_link("click here", href: 'http://bogus/url')
+  end
+
+  xscenario "User accesses existing demo in an error state"
+
+  scenario "Demo status is updated in real time", js: true do
+    @demo.provisioning!
+
+    visit(@demo.url)
+
+    expect(page).to have_content("Your demo is provisioning")
+
+    @demo.update!(status: :provisioned, skytap_id: 123456, published_url: 'http://bogus/url')
+    expect(page).not_to have_content("Your demo is provisioning")
+    expect(page).to have_content("to access your environment")
+    expect(page).to have_link("click here", href: 'http://bogus/url')
+
   end
 end

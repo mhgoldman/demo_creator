@@ -21,7 +21,7 @@ class Demo < ActiveRecord::Base
 	end
 
 	def display_description
-		self.description || self.template.name
+		self.description && self.description.length > 0 ? self.description : self.template.name
 	end
 
 	def provision_later

@@ -1,5 +1,4 @@
 class DemosController < ApplicationController
-  #TODO! Need a templates controller!!!
   def new
     @demo = Demo.new
   end
@@ -37,18 +36,18 @@ class DemosController < ApplicationController
     @description = @demo.display_description
 
     if @demo.ready? #fulfilled and not expired
-      @message = :ready
       @url = @demo.published_url
-    elsif @demo.provisioning?
-      @message = :provisioning
     elsif @demo.provisionable?
       @demo.provision_later
-      @message = :started_provisioning
     elsif @demo.error?
-      @message = :error
       @error = @demo.provisioning_error
-    else #expired?
-      @message = :expired
+    end
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @demo.to_json, status: (@demo.error? || @demo.expired? ? :bad_request : :ok)
+      }
     end
   end
 
