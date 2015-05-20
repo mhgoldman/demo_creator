@@ -1,6 +1,9 @@
 class ProvisionDemoJob < ApplicationJob
   def perform(demo)
-  	#TODO! PRevent infinite unrecoverable retries!
-  	demo.provision!
+    begin
+    	demo.provision!
+    rescue => ex
+      demo.update(status: :error, provisioning_error: "#{ex.class}: #{ex.message}")
+    end
   end
 end

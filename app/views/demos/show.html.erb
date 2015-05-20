@@ -1,3 +1,5 @@
+<h3><%= @description %></h3>
+
 <% case @message %>
 <% when :ready %>
   Please <%= link_to "click here", @url %> to access your environment.
@@ -7,4 +9,9 @@
   Your demo has started provisioning. Please refresh this page for updates.
 <% when :expired %>
   Your demo has expired. You can <%= link_to 'request a new demo', new_demo_path %>.
+<% when :error %>
+  An error has occurred. Please contact your administrator or <%= link_to 'request a new demo', new_demo_path %>.
+  <br/>
+  <br/>
+  <%= @error %>
 <% end %> 

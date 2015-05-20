@@ -6,7 +6,7 @@ class Demo < ActiveRecord::Base
 	belongs_to :template
 	belongs_to :requestor
 
-	enum status: [:pending, :confirmed, :provisioning, :provisioned]
+	enum status: [:pending, :confirmed, :provisioning, :provisioned, :error]
 
 	validates :template_id, presence: true
 	validates :requestor_id, presence: true
@@ -20,6 +20,10 @@ class Demo < ActiveRecord::Base
 		Rails.application.routes.url_helpers.demo_url(token)
 	end
 
+	def display_description
+		self.description || self.template.name
+	end
+
 	def provision_later
 		ProvisionDemoJob.perform_later(self)
 	end
@@ -27,13 +31,14 @@ class Demo < ActiveRecord::Base
 	def provision!
 		provisioning!
 
-		config = SkytapAPI.post('configurations', 
-			template_id: template.skytap_id
-		)
+		config = SkytapAPI.post('configurations', template_id: template.skytap_id)
 
 		update(skytap_id: config.id)
 
-		update(published_url: config.publish_sets.first.desktops_url) if config.publish_sets.length > 0
+		raise 'The requested template does not have a published URL configured' if 
+			config.publish_sets.length == 0 || !config.publish_sets.first.desktops_url
+
+		update(published_url: config.publish_sets.first.desktops_url)
 
     SkytapAPI.post("schedules",
       title: "Schedule for #{config.name} - [#{config.id}]",

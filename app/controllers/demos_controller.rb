@@ -1,4 +1,5 @@
 class DemosController < ApplicationController
+  #TODO! Need a templates controller!!!
   def new
     @demo = Demo.new
   end
@@ -7,10 +8,24 @@ class DemosController < ApplicationController
     @demo = Demo.new(demo_params)
     if @demo.save
       DemoConfirmationMailer.confirmation_email(@demo).deliver_later(queue: ApplicationJob::DEFAULT_QUEUE) #Que uses blank queue name
-      redirect_to root_path, notice: 'OK, check your email.'
+      respond_to do |format|
+        format.html {
+          redirect_to root_path, notice: 'OK, check your email.'          
+        }
+        format.json {
+          render json: @demo.to_json(include: :requestor), status: :created
+        }
+      end
     else
-      flash[:alert] = "Please correct the errors below."
-      render 'new'
+      respond_to do |format|
+        format.html {
+          flash[:alert] = "Please correct the errors below."
+          render 'new'
+        }
+        format.json {
+          render json: @demo.errors.full_messages, status: :bad_request
+        }
+      end
     end
   end
 
@@ -19,6 +34,8 @@ class DemosController < ApplicationController
 
     @demo.confirmed! if @demo.pending?
 
+    @description = @demo.display_description
+
     if @demo.ready? #fulfilled and not expired
       @message = :ready
       @url = @demo.published_url
@@ -26,7 +43,10 @@ class DemosController < ApplicationController
       @message = :provisioning
     elsif @demo.provisionable?
       @demo.provision_later
-      @message = :started_provisioning      
+      @message = :started_provisioning
+    elsif @demo.error?
+      @message = :error
+      @error = @demo.provisioning_error
     else #expired?
       @message = :expired
     end
