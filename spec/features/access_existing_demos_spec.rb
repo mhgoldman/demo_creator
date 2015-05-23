@@ -24,30 +24,39 @@ RSpec.feature "AccessExistingDemos", type: :feature do
     @demo.provisioning!
 
     visit(@demo.url)
-    expect(page).to have_content("Your demo is provisioning")
+    expect(page).to have_content("Demo provisioning in progress")
   end
 
   scenario "User accesses existing demo successfully" do
     @demo.update!(status: :provisioned, skytap_id: 123456, published_url: 'http://bogus/url')
 
     visit(@demo.url)
-    expect(page).to have_content("to access your environment")
-    expect(page).to have_link("click here", href: 'http://bogus/url')
+    expect(page).to have_content("Your demo is available")
+    expect(page).to have_link("Access Demo", href: 'http://bogus/url')
   end
 
-  xscenario "User accesses existing demo in an error state"
+  scenario "User accesses existing demo in an error state" do
+    @demo.update!(status: :error, skytap_id: 123456, provisioning_error: 'something bad happened')
+
+    visit(@demo.url)
+    expect(page).to have_content("An error has occurred")
+    expect(page).to have_content("something bad happened")
+  end
 
   scenario "Demo status is updated in real time", js: true do
     @demo.provisioning!
 
     visit(@demo.url)
 
-    expect(page).to have_content("Your demo is provisioning")
+    expect(page).to have_content("Demo provisioning in progress")
 
+    # TODO This doesn't work because the href doesn't get updated until you click the button. Why?
     @demo.update!(status: :provisioned, skytap_id: 123456, published_url: 'http://bogus/url')
-    expect(page).not_to have_content("Your demo is provisioning")
-    expect(page).to have_content("to access your environment")
-    expect(page).to have_link("click here", href: 'http://bogus/url')
+    sleep 10
+
+    expect(page).not_to have_content("Demo provisioning in progress")
+    expect(page).to have_content("Your demo is available")
+    expect(page).to have_link("Access Demo", href: 'http://bogus/url')
 
   end
 end

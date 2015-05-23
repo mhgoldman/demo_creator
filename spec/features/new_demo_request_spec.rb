@@ -26,10 +26,10 @@ RSpec.feature "DemoRequests", type: :feature do
       click_first_link_in_email
     end
 
-    expect(page).to have_content('started provisioning')
+    expect(page).to have_content('Starting demo provisioning')
 
     visit(current_path)
-    expect(page).to have_content('to access your environment')
+    expect(page).to have_content('Your demo is available')
   end
 
   scenario 'User accesses expired demo' do
@@ -46,10 +46,10 @@ RSpec.feature "DemoRequests", type: :feature do
       click_first_link_in_email
     end
 
-    expect(page).to have_content('started provisioning')
+    expect(page).to have_content('Starting demo provisioning')
 
     visit(current_path)
-    expect(page).to have_content('to access your environment')
+    expect(page).to have_content('Your demo is available')
   end
 
 end
