@@ -2,12 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Demo, type: :model do
   context ".create" do
-    it "requires an email or requestor to save" do
+    it "requires a whitelisted email or requestor to save" do
       t = Template.create!(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
 
       demo = Demo.new(template: t)
       expect(demo).to_not be_valid
 
+      demo.email = 'foo@bar.com'
+      expect(demo).to_not be_valid
+
+      demo = Demo.new(template: t)      
       demo.email = 'me@mgoldman.com'
       expect(demo).to be_valid
       expect(demo.requestor).to_not be_nil
