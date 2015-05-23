@@ -15,5 +15,6 @@
 <%= image_tag 'spinner.gif', class: :spinner, data: { status: 'provisioning'}, style: (@demo.provisioning? ? '' : 'display:none') %>
 <% # TODO, This sucks, do something %>
 <% if @demo.confirmed? || @demo.provisioning? %>
-<script>$(document).ready(maintainStatus);</script>
+  <script>$(document).ready(maintainStatus);</script>
+  <noscript>Please refresh the page for updates.</noscript>
 <% end %>
