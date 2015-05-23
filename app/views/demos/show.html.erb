@@ -1,8 +1,9 @@
 <div class='description'><%= @description %></div>
 
 <div class='instructions'>
+  <span data-status="confirmed" style="<%= @demo.confirmed? ? '' : 'display:none;'%>">Starting demo provisioning...</span>    
+  <span data-status="provisioning" style="<%= @demo.provisioning? ? '' : 'display:none;'%>">Demo provisioning in progress...</span>
   <span data-status="ready" style="<%= @demo.ready? ? '' : 'display:none;'%>">Your demo is available for use.</span>
-  <span data-status="provisioning" style="<%= @demo.provisioning? ? '' : 'display:none;'%>">Your demo is provisioning, please wait...</span>
   <span data-status="expired" style="<%= @demo.expired? ? '' : 'display:none;'%>">Your demo has expired. You can <%= link_to 'request a new demo', new_demo_path %>.</span>
   <span data-status="error" style="<%= @demo.error? ? '' : 'display:none;'%>">An error has occurred. Please contact your administrator or <%= link_to 'request a new demo', new_demo_path %>.
   <br/>
@@ -10,9 +11,9 @@
   <span data-status="error" id="error_text"><%= @error %></span>
 </div>
 
-<button data-status="ready" class="big_button" type="submit" onclick="window.location='<%= @demo.published_url %>'" style="<%= @demo.ready? ? '' : 'display:none;'%>">Access Demo</button>
+<a data-status="ready" class="big_button" href="<%= @demo.published_url %>" style="<%= @demo.ready? ? '' : 'display:none;'%>">Access Demo</a>
 <%= image_tag 'spinner.gif', class: :spinner, data: { status: 'provisioning'}, style: (@demo.provisioning? ? '' : 'display:none') %>
 <% # TODO, This sucks, do something %>
-<% if @demo.provisioning? %>
+<% if @demo.confirmed? || @demo.provisioning? %>
 <script>$(document).ready(maintainStatus);</script>
 <% end %>

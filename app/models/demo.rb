@@ -21,7 +21,7 @@ class Demo < ActiveRecord::Base
 	end
 
 	def display_description
-		self.description && self.description.length > 0 ? self.description : self.template.name
+		self.description.present? ? self.description : self.template.name
 	end
 
 	def provision_later
@@ -78,13 +78,13 @@ class Demo < ActiveRecord::Base
 	private
 
 	def name
-		"Demo Environment - #{template.name} - #{requestor.email} - #{description}"
+		"Demo Environment - #{template.name} - #{requestor.email} #{description.present? ? ' - ' + description : ''}"
 	end
 
 	def set_requestor
 		if self.email && !self.requestor
-			self.requestor = Requestor.first_or_create(email: email)
-			self.save
+			self.requestor = Requestor.where(email: email).first_or_create
+			self.requestor.errors[:email].each { |error| self.errors.add(:email, error) }
 		elsif !self.email && self.requestor
 			self.email = self.requestor.email
 		end

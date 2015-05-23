@@ -50,6 +50,15 @@ abbr[title=required] {
   font-size: 1.5em;
 }
 
+.logo a {
+  text-decoration: none;  
+  color: black;
+}
+
+.logo a:hover {
+  color: gray; 
+}
+
 .description {
   letter-spacing: 0.0625em;
   text-transform: uppercase;
@@ -106,6 +115,15 @@ abbr[title=required] {
   display: block;
   letter-spacing: 0.0625em;
   border-radius: 0.75em;
+  cursor: pointer;
+}
+
+.big_button:hover {
+  color: gray;
+}
+
+a.big_button {
+  text-decoration: none;  
 }
 
 .spinner {

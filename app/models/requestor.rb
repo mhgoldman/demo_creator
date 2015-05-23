@@ -1,8 +1,10 @@
 require 'skytap_api'
 
+
+
 class Requestor < ActiveRecord::Base
 	has_many :demos
-	validates :email, presence: true, uniqueness: true
+	validates :email, presence: true, uniqueness: true, whitelisted_email: true
 
   def find_or_create_skytap_url
     self.skytap_url ||= create_skytap_user

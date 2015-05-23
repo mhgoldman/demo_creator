@@ -19,14 +19,18 @@ function maintainStatus() {
   function updateStatus(data) {
     if (data.status == 'provisioned') {
       $("[data-status='provisioning']").hide();
+      $('#demo_button').attr('href', data.published_url);
       $("[data-status='ready']").show();
-      $('demo_button').click = function() {
-        window.location = data.published_url;
-      };
+
+      return;
     }
-    else {
-      getDemoIn5Secs();
+
+    if (data.status == 'provisioning') {
+      $("[data-status='confirmed']").hide();
+      $("[data-status='provisioning']").show();
     }
+
+    getDemoIn5Secs();
   }
 
   function handleError(error) {
