@@ -5,12 +5,14 @@ class ProvisionDemoJob < ApplicationJob
     rescue => ex
       msg = "#{ex.class}: #{ex.message}"
 
-      if ex.respond_to?(:response)
+      begin
         resp = JSON.parse(ex.response)
         msg = "#{resp['error']} (#{msg})" if resp['error']
+      rescue
+        # if there's no JSON in the response, so be it.
       end
 
-      demo.update(status: :error, provisioning_error: msg)
+      demo.error!(msg)
     end
   end
 end

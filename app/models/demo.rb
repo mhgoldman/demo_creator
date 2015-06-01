@@ -13,8 +13,7 @@ class Demo < ActiveRecord::Base
 	validates :email, presence: true
 
 	before_validation :set_requestor
-	before_save :set_token, :set_expirations
-	before_create :set_pending
+	before_create :set_token, :set_expirations, :set_pending
 
 	def url
 		Rails.application.routes.url_helpers.demo_url(token)
@@ -28,7 +27,14 @@ class Demo < ActiveRecord::Base
 		ProvisionDemoJob.perform_later(self)
 	end
 
+	def error!(provisioning_error)
+		update(status: :error, provisioning_error: provisioning_error)
+		deprovision!
+	end
+
 	def provision!
+		return unless confirmed? && self.skytap_id.blank?
+
 		provisioning!
 
 		config = SkytapAPI.post('configurations', template_id: template.skytap_id)
@@ -100,6 +106,10 @@ class Demo < ActiveRecord::Base
 	end
 
 	def set_pending
-		self.status = 'pending'
+		self.status = :pending
+	end
+
+	def deprovision!
+		SkytapAPI.delete("configurations/#{self.skytap_id}") if self.skytap_id
 	end
 end

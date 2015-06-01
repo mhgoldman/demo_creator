@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'demos#new'
-  resources :demos, param: :token, path: '/'
-
   require "que/web"
   mount Que::Web => "/que"
+
+  root 'demos#new'
+  resources :demos, param: :token, path: '/'
 
   #  do
   #   member do

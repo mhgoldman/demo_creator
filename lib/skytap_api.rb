@@ -39,6 +39,10 @@ class SkytapAPI
     api_call(:get, url, nil, 0)
   end
 
+  def self.delete(url)
+    api_call(:delete, url, nil, 0)
+  end
+
   private
 
   def self.api_call(method, url, body=nil, retries=0)
@@ -55,7 +59,7 @@ class SkytapAPI
     url = url[1..-1] if url.start_with?('/')
 
     begin
-      if method == :get
+      if [:get,:delete].include?(method)
         output = @api[url].send(method)          
       else
         output = @api[url].send(method, body ? body.to_json : nil)
@@ -72,6 +76,8 @@ class SkytapAPI
       end
     end
 
+    return nil if method == :delete
+    
     resp = JSON.parse(output, symbolize_names: true)
     resp.is_a?(Array) ? resp.map {|obj| SkytapAPIObject.new(obj)} : SkytapAPIObject.new(resp)
   end
