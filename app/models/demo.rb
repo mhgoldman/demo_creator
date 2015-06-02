@@ -15,6 +15,8 @@ class Demo < ActiveRecord::Base
 	before_validation :set_requestor
 	before_create :set_token, :set_expirations, :set_pending
 
+	composed_of :provisioning_status, mapping: %w(provisioning_status_name status_name)
+
 	def url
 		Rails.application.routes.url_helpers.demo_url(token)
 	end

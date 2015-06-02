@@ -1,7 +1,5 @@
 require 'skytap_api'
 
-
-
 class Requestor < ActiveRecord::Base
 	has_many :demos
 	validates :email, presence: true, uniqueness: true, whitelisted_email: true

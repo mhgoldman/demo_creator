@@ -1,16 +1,19 @@
 class ProvisioningStatus
-  attr_accessor :status, :percent_complete, :message
+  attr_accessor :status_name, :percent_complete, :message
 
   STATUS_MAP = {
-    started: [10, "Its started!"],
-    pre_something: [50, "Half way pre something"],
-    done: [100, "Completed"]
+    creating: { percent_complete: 0, message: "Provisioning environment" },
+    assigning: { percent_complete: 20, message: "Assigning environment ownership" },
+    scheduling: { percent_complete: 40, message: "Configuring access window" },
+    connecting: {percent_complete: 60, message: "Connecting to global network" },
+    starting: { percent_complete: 80, message: "Starting environment" },
+    complete: { percent_complete: 100, message: "Provisioning complete" }
   }
 
-  def initialize(status)
-    @status = status
-    @percent_complete = STATUS_MAP[status].first
-    @message = STATUS_MAP[status].last
+  def initialize(status_name)
+    @status_name = status_name
+    @percent_complete = STATUS_MAP[status_name][:percent_complete]
+    @message = STATUS_MAP[status_name][:message]
   end
 end
 
