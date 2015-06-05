@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520105427) do
+ActiveRecord::Schema.define(version: 20150605141014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(version: 20150520105427) do
     t.datetime "confirmation_expiration"
     t.datetime "usage_expiration"
     t.integer  "skytap_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "provisioning_error"
+    t.string   "provisioning_status_name"
   end
 
   create_table "que_jobs", primary_key: "queue", force: :cascade do |t|

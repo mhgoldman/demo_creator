@@ -15,7 +15,7 @@ class Demo < ActiveRecord::Base
 	before_validation :set_requestor
 	before_create :set_token, :set_expirations, :set_pending
 
-	composed_of :provisioning_status, mapping: %w(provisioning_status_name status_name)
+	composed_of :provisioning_status, allow_nil: true, mapping: %w(provisioning_status_name status_name)
 
 	def url
 		Rails.application.routes.url_helpers.demo_url(token)
@@ -34,6 +34,14 @@ class Demo < ActiveRecord::Base
 		deprovision!
 	end
 
+	def provisioning!
+		update(status: :provisioning, provisioning_status_name: :creating)
+	end
+
+	def provisioned!
+		update(status: :provisioned, provisioning_status_name: :complete)
+	end
+
 	def provision!
 		return unless confirmed? && self.skytap_id.blank?
 
@@ -48,6 +56,14 @@ class Demo < ActiveRecord::Base
 
 		update(published_url: config.publish_sets.first.desktops_url)
 
+    update(provisioning_status_name: :assigning)
+
+		SkytapAPI.put(config.url,
+			owner: requestor.find_or_create_skytap_url
+		)
+
+		update(provisioning_status_name: :scheduling)
+
     SkytapAPI.post("schedules",
       title: "Schedule for #{config.name} - [#{config.id}]",
       configuration_id: config.id,
@@ -57,11 +73,12 @@ class Demo < ActiveRecord::Base
       time_zone: "UTC"
     )
 
+    update(provisioning_status_name: :connecting)
+
     SkytapAPI.post("tunnels?source_network_id=#{config.networks.first.id}&target_network_id=#{ENV['global_network_id']}") if ENV['global_network_id']
 
-		SkytapAPI.put(config.url,
-			owner: requestor.find_or_create_skytap_url
-		)
+
+    update(provisioning_status_name: :starting)
 
 		SkytapAPI.put(config.url,
 			name: name,

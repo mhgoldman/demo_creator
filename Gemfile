@@ -70,3 +70,4 @@ end
 
 gem 'que'
 gem 'que-web'
+gem 'active_model_serializers'

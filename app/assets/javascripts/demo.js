@@ -12,31 +12,32 @@ function maintainStatus() {
     $.ajax(ajaxOptions).done(updateStatus).fail(handleError);
   }
 
-  function getDemoIn5Secs() {
-    setTimeout(getDemo, 5000);
+  function getDemoLater() {
+    setTimeout(getDemo, 2000);
   }
 
   function updateStatus(data) {
-    if (data.status == 'provisioned') {
+    if (data.demo.status == 'provisioned') {
       $("[data-status='provisioning']").hide();
-      $('#demo_button').attr('href', data.published_url);
+      $('#demo_button').attr('href', data.demo.published_url);
       $("[data-status='ready']").show();
 
       return;
     }
 
-    if (data.status == 'provisioning') {
+    if (data.demo.status == 'provisioning') {
       $("[data-status='confirmed']").hide();
       $("[data-status='provisioning']").show();
+      $('#provisioning_status').html(data.demo.provisioning_status.message);
     }
 
-    getDemoIn5Secs();
+    getDemoLater();
   }
 
   function handleError(error) {
-    var demo = $.parseJSON(error.responseText)
+    var data = $.parseJSON(error.responseText)
     $("[data-status='provisioning']").hide();
-    $("#error_text").html(demo.provisioning_error);
+    $("#error_text").html(data.demo.provisioning_error);
     $("[data-status='error']").show();
   }
 }

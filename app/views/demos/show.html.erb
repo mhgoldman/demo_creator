@@ -12,6 +12,7 @@
 </div>
 
 <a data-status="ready" class="big_button" id="demo_button" href="<%= @demo.published_url %>" style="<%= @demo.ready? ? '' : 'display:none;'%>">Access Demo</a>
+<span data-status="provisioning" id="provisioning_status" style="<%= @demo.provisioning? ? '' : 'display:none;'%>"><%= @demo.provisioning_status.try(:message) %></span>
 <%= image_tag 'spinner.gif', class: :spinner, data: { status: 'provisioning'}, style: (@demo.provisioning? ? '' : 'display:none') %>
 <% # TODO, This sucks, do something %>
 <% if @demo.confirmed? || @demo.provisioning? %>

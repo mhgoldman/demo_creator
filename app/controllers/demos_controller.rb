@@ -12,7 +12,7 @@ class DemosController < ApplicationController
           redirect_to root_path, notice: 'OK, check your email.'          
         }
         format.json {
-          render json: @demo.to_json(include: :requestor), status: :created
+          render json: @demo, status: :created
         }
       end
     else
@@ -46,7 +46,7 @@ class DemosController < ApplicationController
     respond_to do |format|
       format.html
       format.json {
-        render json: @demo.to_json, status: (@demo.error? || @demo.expired? ? :bad_request : :ok)
+        render json: @demo, status: (@demo.error? || @demo.expired? ? :bad_request : :ok)
       }
     end
   end
