@@ -1,20 +1,24 @@
 <div class='description'><%= @description %></div>
 
 <div class='instructions'>
-  <span data-status="confirmed" style="<%= @demo.confirmed? ? '' : 'display:none;'%>">Starting demo provisioning...</span>    
-  <span data-status="provisioning" style="<%= @demo.provisioning? ? '' : 'display:none;'%>">Demo provisioning in progress...</span>
+  <span data-status="confirmed" style="<%= @demo.confirmed? ? '' : 'display:none;'%>">Please wait while provisioning starts.</span>    
+  <span data-status="provisioning" style="<%= @demo.provisioning? ? '' : 'display:none;'%>">Please wait while your demo is provisioned.</span>
   <span data-status="ready" style="<%= @demo.ready? ? '' : 'display:none;'%>">Your demo is available for use.</span>
   <span data-status="expired" style="<%= @demo.expired? ? '' : 'display:none;'%>">Your demo has expired. You can <%= link_to 'request a new demo', new_demo_path %>.</span>
   <span data-status="error" style="<%= @demo.error? ? '' : 'display:none;'%>">An error has occurred. Please contact your administrator or <%= link_to 'request a new demo', new_demo_path %>.
-  <br/>
-  <br/>
   <span data-status="error" id="error_text"><%= @error %></span>
 </div>
 
 <a data-status="ready" class="big_button" id="demo_button" href="<%= @demo.published_url %>" style="<%= @demo.ready? ? '' : 'display:none;'%>">Access Demo</a>
+
+<span id="provisioning_progressbar_section">
+  <progress data-status="provisioning" id="provisioning_progressbar" max="100" value="0" style="<%= @demo.provisioning? ? '' : 'display:none;'%>"></progress>
+
+  <span data-status="provisioning" id="provisioning_percent_complete" style="<%= @demo.provisioning? ? '' : 'display:none;'%>"><%= @demo.provisioning_status.try(:percent_complete) %></span>
+</span>
+
 <span data-status="provisioning" id="provisioning_status" style="<%= @demo.provisioning? ? '' : 'display:none;'%>"><%= @demo.provisioning_status.try(:message) %></span>
-<%= image_tag 'spinner.gif', class: :spinner, data: { status: 'provisioning'}, style: (@demo.provisioning? ? '' : 'display:none') %>
-<% # TODO, This sucks, do something %>
+
 <% if @demo.confirmed? || @demo.provisioning? %>
   <script>$(document).ready(maintainStatus);</script>
   <noscript>Please refresh the page for updates.</noscript>

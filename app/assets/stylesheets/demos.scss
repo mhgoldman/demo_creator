@@ -33,6 +33,7 @@ body {
 }
 
 .container {
+  width: 33.125em;
   border: 1px solid black;  
   display: inline-block;
   background-color: white;
@@ -126,11 +127,6 @@ a.big_button {
   text-decoration: none;  
 }
 
-.spinner {
-  margin: 2em auto 0 auto;
-  height: 2.375em;
-}
-
 @media screen and (max-device-width: 545px) {
   body  {
     margin: 0.5em;
@@ -150,4 +146,31 @@ a.big_button {
      width: 95%;
     }
   }
+}
+
+#error_text {
+  margin: 1em 0 0 0;
+  display: block;
+}
+
+progress {
+  -webkit-appearance: none;
+   appearance: none;
+   height: 1.5em;
+   width: 15em;
+  margin: 1em 0 0 0;
+}
+
+#provisioning_status {
+  margin: 1em 0 0 0;
+  display: block;  
+}
+
+#provisioning_percent_complete {
+  font-size: 0.8em;
+  position: top;
+}
+
+#provisioning_percent_complete::after {
+  content: "%";
 }

@@ -29,6 +29,8 @@ function maintainStatus() {
       $("[data-status='confirmed']").hide();
       $("[data-status='provisioning']").show();
       $('#provisioning_status').html(data.demo.provisioning_status.message);
+      $('#provisioning_percent_complete').html(data.demo.provisioning_status.percent_complete);
+      $('#provisioning_progressbar')[0].value = data.demo.provisioning_status.percent_complete;
     }
 
     getDemoLater();
