@@ -1,4 +1,6 @@
 function maintainStatus() {
+  $.ajaxSetup({cache: false});
+  
   getDemo();
 
   function getDemo() {

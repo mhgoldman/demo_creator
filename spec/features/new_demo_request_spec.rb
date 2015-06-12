@@ -26,7 +26,7 @@ RSpec.feature "DemoRequests", type: :feature do
       click_first_link_in_email
     end
 
-    expect(page).to have_content('Starting demo provisioning')
+    expect(page).to have_content('Please wait while provisioning starts')
 
     visit(current_path)
     expect(page).to have_content('Your demo is available')
@@ -46,7 +46,7 @@ RSpec.feature "DemoRequests", type: :feature do
       click_first_link_in_email
     end
 
-    expect(page).to have_content('Starting demo provisioning')
+    expect(page).to have_content('Please wait while provisioning starts')
 
     visit(current_path)
     expect(page).to have_content('Your demo is available')
