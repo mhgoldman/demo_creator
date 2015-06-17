@@ -15,7 +15,7 @@ function maintainStatus() {
   }
 
   function getDemoLater() {
-    setTimeout(getDemo, 2000);
+    setTimeout(getDemo, POLL_INTERVAL_MS);
   }
 
   function updateStatus(data) {

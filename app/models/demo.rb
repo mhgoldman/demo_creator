@@ -17,8 +17,12 @@ class Demo < ActiveRecord::Base
 
 	composed_of :provisioning_status, allow_nil: true, mapping: %w(provisioning_status_name status_name)
 
+	def to_param
+		self.token
+	end
+
 	def url
-		Rails.application.routes.url_helpers.demo_url(token)
+		Rails.application.routes.url_helpers.demo_url(self)
 	end
 
 	def display_description

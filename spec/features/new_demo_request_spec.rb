@@ -32,7 +32,7 @@ RSpec.feature "DemoRequests", type: :feature do
     expect(page).to have_content('Your demo is available')
   end
 
-  scenario 'User accesses expired demo' do
+  scenario 'Use requests demo successfully with JS', js: true do
     visit root_path
     select 'Windows 7 Enterprise SP1 64-bit - Sysprepped', from: 'Template'
     fill_in 'Email', with: 'me@mgoldman.com'
@@ -40,16 +40,29 @@ RSpec.feature "DemoRequests", type: :feature do
     click_button 'Create Demo'
     expect(page).to have_content('OK, check your email')
 
-    open_email('me@mgoldman.com')
+    demo = Demo.last
+    demo.provisioning!
 
-    VCR.use_cassette("demo_provisioning") do
-      click_first_link_in_email
-    end
+    visit demo_path(demo)
 
-    expect(page).to have_content('Please wait while provisioning starts')
+    expect(page).to have_content('Please wait while your demo is provisioned')
+    expect(page).to have_content('Provisioning environment')
 
-    visit(current_path)
+    demo.update(provisioning_status_name: :assigning)
+    expect(page).to have_content('Assigning environment ownership')
+
+    demo.update(provisioning_status_name: :scheduling)
+    expect(page).to have_content('Configuring access window')
+
+    demo.update(provisioning_status_name: :connecting)
+    expect(page).to have_content('Connecting to global network')
+
+    demo.update(provisioning_status_name: :starting)
+    expect(page).to have_content('Starting environment')
+
+    demo.update(provisioning_status_name: :complete)
+    demo.provisioned!
     expect(page).to have_content('Your demo is available')
-  end
 
+  end
 end

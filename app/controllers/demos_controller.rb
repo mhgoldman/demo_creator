@@ -29,7 +29,7 @@ class DemosController < ApplicationController
   end
 
   def show
-    @demo = Demo.find_by(token: params[:token]) or raise "Invalid request"
+    @demo = Demo.find_by!(token: params[:token]) 
 
     @demo.confirmed! if @demo.pending?
 
