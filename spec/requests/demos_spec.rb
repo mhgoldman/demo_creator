@@ -10,7 +10,7 @@ RSpec.describe "Demos", type: :request do
 
     it "responses to bad_requests correctly" do
       template = Template.create!(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
-      demo = Demo.create!(template: template, email: 'me@mgoldman.com')
+      demo = Demo.create!(template: template, email: 'me@skytap.com')
       demo.update(confirmation_expiration: 10.years.ago)
 
       get demo.url, nil, { 'HTTP_ACCEPT' => 'application/json' }
@@ -19,7 +19,7 @@ RSpec.describe "Demos", type: :request do
 
     it "responds to good requests with json containing required attributes" do
       template = Template.create!(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
-      demo = Demo.create!(template: template, email: 'me@mgoldman.com')
+      demo = Demo.create!(template: template, email: 'me@skytap.com')
 
       expected_attributes = [:id, :status, :description, :token, :published_url, :skytap_id, :provisioning_error]
       expected_date_attributes = [:confirmation_expiration, :usage_expiration]

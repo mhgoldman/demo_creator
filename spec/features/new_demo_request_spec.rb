@@ -15,12 +15,12 @@ RSpec.feature "DemoRequests", type: :feature do
   scenario 'User requests demo successfully' do
     visit root_path
     select 'Windows 7 Enterprise SP1 64-bit - Sysprepped', from: 'Template'
-    fill_in 'Email', with: 'me@mgoldman.com'
+    fill_in 'Email', with: 'me@skytap.com'
     fill_in 'Description', with: 'my kewl demo'
     click_button 'Create Demo'
     expect(page).to have_content('OK, check your email')
 
-    open_email('me@mgoldman.com')
+    open_email('me@skytap.com')
 
     VCR.use_cassette("demo_provisioning") do
       click_first_link_in_email
@@ -35,7 +35,7 @@ RSpec.feature "DemoRequests", type: :feature do
   scenario 'Use requests demo successfully with JS', js: true do
     visit root_path
     select 'Windows 7 Enterprise SP1 64-bit - Sysprepped', from: 'Template'
-    fill_in 'Email', with: 'me@mgoldman.com'
+    fill_in 'Email', with: 'me@skytap.com'
     fill_in 'Description', with: 'my kewl demo'
     click_button 'Create Demo'
     expect(page).to have_content('OK, check your email')

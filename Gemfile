@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'pg'
@@ -47,7 +47,7 @@ group :development, :test do
 
   gem 'capybara'
   gem 'capybara-email'
-#  gem 'email_spec'
+  gem 'email_spec'
 end
 
 gem 'simple_form'

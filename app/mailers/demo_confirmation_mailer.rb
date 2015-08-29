@@ -1,5 +1,5 @@
 class DemoConfirmationMailer < ApplicationMailer
-	default from: 'donotreply@demo-creator.skytap.com'
+	default from: ENV['mail_from']
 
 	def confirmation_email(demo)
 		@demo = demo

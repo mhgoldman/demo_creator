@@ -79,8 +79,8 @@ class Demo < ActiveRecord::Base
 
     update(provisioning_status_name: :connecting)
 
+    # TODO - limited to a single region
     SkytapAPI.post("tunnels?source_network_id=#{config.networks.first.id}&target_network_id=#{ENV['global_network_id']}") if ENV['global_network_id']
-
 
     update(provisioning_status_name: :starting)
 

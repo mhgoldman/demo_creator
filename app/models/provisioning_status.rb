@@ -24,15 +24,3 @@ class ProvisioningStatus
     {'status_name' => nil, 'percent_complete' => nil, 'message' => nil}
   end
 end
-
-# class Demo
-
-#   composed_of :provisioning_status, mapping: %w(provisioning_status status)
-# end
-
-# demo.provisioning_status
-# demo.provisioning_status.status
-# demo.provisioning_status.percent_complete
-# demo.provisioning_status.message
-
-#http://api.rubyonrails.org/classes/ActiveRecord/Aggregations/ClassMethods.html

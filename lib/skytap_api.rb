@@ -24,9 +24,6 @@ class SkytapAPI
   MAX_RETRIES = 5
   SLEEP_BETWEEN_RETRIES_SECS = 20
 
-  # HttpLog.options[:logger] = Rails.logger
-  # HttpLog.options[:log_headers] = true
-
   def self.post(url, body=nil)
     api_call(:post, url, body, 0)
   end

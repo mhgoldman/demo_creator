@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "AccessExistingDemos", type: :feature do
   before do
     t = Template.create!(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')    
-    @demo = Demo.create!(template: t, email: 'me@mgoldman.com')
+    @demo = Demo.create!(template: t, email: 'me@skytap.com')
   end
 
   scenario "User confirms after confirmation expired" do

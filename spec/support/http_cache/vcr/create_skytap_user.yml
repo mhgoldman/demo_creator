@@ -5,7 +5,7 @@ http_interactions:
     uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users
     body:
       encoding: UTF-8
-      string: '{"login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","password":"1617efc2dfe6b324dbf69331639c1bc1","email":"me@mgoldman.com"}'
+      string: '{"login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","password":"1617efc2dfe6b324dbf69331639c1bc1","email":"me@skytap.com"}'
     headers:
       Accept:
       - application/json
@@ -55,7 +55,7 @@ http_interactions:
       - '1.285941'
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"113450","url":"https://cloud.skytap.com/users/113450","login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","title":null,"email":"me@mgoldman.com","created_at":"2015-04-21T18:34:30-07:00","deleted":false,"activated":true,"password":"**********","account_role":"standard_user","quotas":[{"id":"concurrent_storage_size","quota_type":"concurrent_storage_size","units":"MB","limit":null,"usage":0},{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":null,"usage":0},{"id":"cumulative_svms","quota_type":"cumulative_svms","units":"hours","limit":null,"usage":0.0},{"id":"concurrent_vms","quota_type":"concurrent_vms","units":"integer","limit":null,"usage":0}],"configurations":[],"templates":[],"assets":[],"lockversion":"53410d020d59ee951f552ff856fb2795d84922d1","can_export":false,"can_import":false,"time_zone":"Pacific
+      string: '{"id":"113450","url":"https://cloud.skytap.com/users/113450","login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","title":null,"email":"me@skytap.com","created_at":"2015-04-21T18:34:30-07:00","deleted":false,"activated":true,"password":"**********","account_role":"standard_user","quotas":[{"id":"concurrent_storage_size","quota_type":"concurrent_storage_size","units":"MB","limit":null,"usage":0},{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":null,"usage":0},{"id":"cumulative_svms","quota_type":"cumulative_svms","units":"hours","limit":null,"usage":0.0},{"id":"concurrent_vms","quota_type":"concurrent_vms","units":"integer","limit":null,"usage":0}],"configurations":[],"templates":[],"assets":[],"lockversion":"53410d020d59ee951f552ff856fb2795d84922d1","can_export":false,"can_import":false,"time_zone":"Pacific
         Time (US & Canada)","has_public_library":true}'
     http_version: 
   recorded_at: Wed, 22 Apr 2015 01:34:31 GMT
@@ -110,7 +110,7 @@ http_interactions:
       - IE=Edge,chrome=1
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":"113450","url":"https://cloud.skytap.com/users/113450","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","email":"me@mgoldman.com","title":null,"deleted":false,"account_role":"standard_user","activated":true,"email_validated":false,"last_login":null,"sso_enabled":false,"department_name":"Fake
+      string: '[{"id":"113450","url":"https://cloud.skytap.com/users/113450","first_name":"esteban-colberto-skytap-com","last_name":"shadow-user","login_name":"esteban-colberto-skytap-com@shadow-user.customer-name.com","email":"me@skytap.com","title":null,"deleted":false,"account_role":"standard_user","activated":true,"email_validated":false,"last_login":null,"sso_enabled":false,"department_name":"Fake
         Department","department_id":"1110"}]'
     http_version: 
   recorded_at: Wed, 22 Apr 2015 01:34:34 GMT

@@ -41,7 +41,8 @@ class Requestor < ActiveRecord::Base
   end
 
   def login_name
-    neutralized_email + "@shadow-user.customer-name.com"
+    "#{neutralized_email}@#{ENV['shadow_user_domain']}"
+    neutralized_email
   end
 
   def first_name
