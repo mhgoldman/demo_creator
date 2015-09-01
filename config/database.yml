@@ -25,5 +25,7 @@ test:
   pool: 5
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: demo_creator_production
+  pool: 5

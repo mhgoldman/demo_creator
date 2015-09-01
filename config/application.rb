@@ -28,5 +28,16 @@ module DemoCreator
     config.autoload_paths << Rails.root.join('app/validators')
     config.autoload_paths << Rails.root.join('app/serializers')
 
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+    :address   => ENV['smtp_server'],
+    :port      => ENV['smtp_port'].to_i,
+    :enable_starttls_auto => true,
+    :user_name => ENV['smtp_user'],
+    :password  => ENV['smtp_pass'],
+    :authentication => 'login',
+    :domain => ENV['smtp_dom']
+    }
   end
 end

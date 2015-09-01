@@ -40,27 +40,4 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
-
-  config.action_mailer.delivery_method = :smtp
-
-  # Does this work?
-  # config.action_mailer.smtp_settings = {
-  #   :address   => ENV['SMTP_SERVER'],
-  #   :port      => ENV['SMTP_PORT'],
-  #   :enable_starttls_auto => true,
-  #   :user_name => ENV['SMTP_USER'],
-  #   :password  => ENV['SMTP_PASS'],
-  #   :authentication => 'login',
-  #   :domain => ENV['SMTP_DOM']
-  # }
-
-  config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => "mgoldman@skytap.com",
-    :password  => "Nrt3exSGREzaP8oQ42v94g", # SMTP password is any valid API key
-    :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'skytap.com', # your domain to identify your server when connecting
-  }
 end
