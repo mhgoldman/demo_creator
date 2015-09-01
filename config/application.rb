@@ -40,4 +40,6 @@ module DemoCreator
     :domain => ENV['smtp_dom']
     }
   end
+
+  Rails.application.routes.default_url_options[:host] = ENV['url_hostname']  
 end

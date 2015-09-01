@@ -21,16 +21,15 @@ fi
 rvm install 2.2.3
 gem install bundler
 
-# Assuming this repo has been checked out!
-# git clone https://bitbucket.org/mhgoldman/demo_creator
-# cd demo_creator/
 bundle
 rake db:create
 rake db:migrate
 
-echo
-echo "*****""
-echo "Next steps:"
-echo "1) Create config/application.yml (see config/application.yml.example)"
-echo "2) rails r Template.pull"
-echo "3) rails s"
+cat <<EOF
+*****
+Next steps:
+1. Create a published service for port 3000 on this VM
+2. Create config/application.yml - see config/application.yml.example
+3. Run: rails r Template.pull
+4. Run rails s -b 0.0.0.0
+EOF

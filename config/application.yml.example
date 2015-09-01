@@ -16,9 +16,11 @@ skytap_api_user: "USER_GOES_HERE"
 skytap_api_key: "KEY_GOES_HERE"
 poll_interval_ms: "2000"
 mail_from: "donotreply@skytap-customer-name.com"
+url_hostname: "localhost:3000"
 
 test:
   skytap_api_user: "testuser@example.tld"
   skytap_api_key: "8135cd4229746c8741076a75e53f7ba979642764"
   poll_interval_ms: "0"
   domain_whitelist: "skytap.com"
+  url_hostname: "localhost:3001"
