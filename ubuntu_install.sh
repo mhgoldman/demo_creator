@@ -5,7 +5,7 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
-sudo -y apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libgdbm-dev libncurses5-dev automake libtool bison libffi-dev libgmp-dev postgresql libpq-dev nodejs libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+sudo apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libgdbm-dev libncurses5-dev automake libtool bison libffi-dev libgmp-dev postgresql libpq-dev nodejs libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
 # DON'T PROMPT!
 
 sudo -u postgres createuser `whoami` -s
