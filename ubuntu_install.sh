@@ -27,7 +27,6 @@ gem install bundler
 bundle
 rake db:create
 rake db:migrate
-whenever -w
 
 echo
 echo "*****""
