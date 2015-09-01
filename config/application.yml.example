@@ -17,6 +17,11 @@ skytap_api_key: "KEY_GOES_HERE"
 poll_interval_ms: "2000"
 mail_from: "donotreply@skytap-customer-name.com"
 url_hostname: "localhost:3000"
+smtp_server: "SERVER_GOES_HERE"
+smtp_port: "PORT_GOES_HERE"
+smtp_user: "USER_GOES_HERE"
+smtp_pass: "PASS_GOES_HERE"
+smtp_dom: "DOMAIN_GOES_HERE"
 
 test:
   skytap_api_user: "testuser@example.tld"

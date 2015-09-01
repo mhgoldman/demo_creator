@@ -60,6 +60,10 @@ class Demo < ActiveRecord::Base
 
 		update(published_url: config.publish_sets.first.desktops_url)
 
+		update(provisioning_status_name: :adding)
+
+		SkytapAPI.post("projects/#{ENV['demo_environments_project_id']}/configurations/#{config.id}") if ENV['demo_environments_project_id']
+
     update(provisioning_status_name: :assigning)
 
 		SkytapAPI.put(config.url,

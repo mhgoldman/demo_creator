@@ -48,6 +48,9 @@ RSpec.feature "DemoRequests", type: :feature do
     expect(page).to have_content('Please wait while your demo is provisioned')
     expect(page).to have_content('Provisioning environment')
 
+    demo.update(provisioning_status_name: :adding)
+    expect(page).to have_content('Adding environment to project')
+
     demo.update(provisioning_status_name: :assigning)
     expect(page).to have_content('Assigning environment ownership')
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install script - Tested on Ubuntu 14.04 ONLY
+# Quick-and-dirty install on a Skytap VM. Tested on Ubuntu 14.04 ONLY
 set -e 
 
 export DEBIAN_FRONTEND=noninteractive
@@ -28,6 +28,7 @@ rake db:migrate
 cat <<EOF
 *****
 Next steps:
+0. Log out/back in to enable rvm
 1. Create a published service for port 3000 on this VM
 2. Create config/application.yml - see config/application.yml.example
 3. Run: rails r Template.pull
