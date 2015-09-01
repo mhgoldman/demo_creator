@@ -23,9 +23,14 @@ If you don't know how to install Rails and happen to be installing on a Skytap U
 1. Install Ruby, Rails and Postgres if you don't have them. 
 2. Ensure you have the Bundler gem installed: `gem install bundler`
 3. In the root of your checked-out repo:
-```bundle install
+
+```
+#!bash
+
+bundle install
 rake db:create
-rake db:migrate```
+rake db:migrate
+```
 4. Create a configuration file in `config/application.yml` using the sample in `config/application.yml.example` as a guide.
 5. To load the list of available templates, run `rails r Template.pull`. If this fails, double check your config file.
 6. Optionally, configure your crontab to update the list of available templates on an hourly basis: `whenever --set environment=development -w`
