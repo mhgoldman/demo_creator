@@ -20,13 +20,18 @@ This sample app enables easy provisioning of Skytap environments for sales demo 
 ## Getting started
 If you don't know how to install Rails and happen to be installing on a Skytap Ubuntu 14.04 VM, there is a _very_ quick-and-dirty installation script you could try in the root of the git repo. Otherwise, here is a high-level summary of what you need to do.
 
-1. Install Ruby, Rails and Postgres if you don't have them. 
-2. Ensure you have the Bundler gem installed: `gem install bundler`
-3. In the root of your checked-out repo:
-```bundle install
+- Install Ruby, Rails and Postgres if you don't have them. 
+- Ensure you have the Bundler gem installed: `gem install bundler`
+- In the root of your checked-out repo:
+
+```
+#!bash
+
+bundle install
 rake db:create
-rake db:migrate```
-4. Create a configuration file in `config/application.yml` using the sample in `config/application.yml.example` as a guide.
-5. To load the list of available templates, run `rails r Template.pull`. If this fails, double check your config file.
-6. Optionally, configure your crontab to update the list of available templates on an hourly basis: `whenever --set environment=development -w`
-7. Start the server: `rails s -b 0.0.0.0`
+rake db:migrate
+```
+- Create a configuration file in `config/application.yml` using the sample in `config/application.yml.example` as a guide.
+- To load the list of available templates, run `rails r Template.pull`. If this fails, double check your config file.
+- Optionally, configure your crontab to update the list of available templates on an hourly basis: `whenever --set environment=development -w`
+- Start the server: `rails s -b 0.0.0.0`
