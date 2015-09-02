@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/configurations
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/configurations
     body:
       encoding: UTF-8
-      string: '{"template_id":248757}'
+      string: '{"template_id":557145}'
     headers:
       Accept:
       - application/json
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:02 GMT
+      - Wed, 02 Sep 2015 01:22:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -36,100 +36,41 @@ http_interactions:
       - Accept-Encoding
       Status:
       - 200 OK
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwic2Vzc2lvbl9pZCI6IjRkZmZjYjY1ZDM3Njg4OGE4ZGIyMzg0ZTQzYTdlOTI5IiwiX2NzcmZfdG9rZW4iOiJwM1paSGdBdmJ6VFJobi9ITTBFNmp2VUhFM2NiNzR4QWtmU3craVpPeGFzPSIsInRpbWUiOjE0Mjk3MDY2MzUsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTJ9--ae017927c9c9d3e563236a8add4d46863e6af9a2;
-        path=/; secure
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"406878d680dec68d08c1bbe22fb56a0d"
       Location:
-      - https://cloud.skytap.com/configurations/3889160
-      X-Rack-Cache:
-      - invalidate, pass
-      X-Request-Id:
-      - 9b6762277f69dd155753e0415424c95c
-      X-Runtime:
-      - '7.732858'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":"3889160","url":"https://cloud.skytap.com/configurations/3889160","name":"Windows
-        7 Enterprise SP1 64-bit - Sysprepped","error":"","runstate":"busy","description":"Windows
-        7 Enterprise SP1 64-bit with Skytap Helper and IE9; All Windows Updates installed;
-        Sysprepped","suspend_on_idle":null,"routable":false,"vms":[{"id":"5243224","name":"Windows
-        7 Enterprise SP1 64-bit - Sysprepped","runstate":"busy","hardware":{"cpus":1,"supports_multicore":false,"cpus_per_socket":1,"ram":1024,"svms":1,"guestOS":"windows7-64","max_cpus":12,"min_ram":256,"max_ram":131072,"vnc_keymap":null,"uuid":null,"disks":[{"id":"disk-2272082-5294456-scsi-0-0","size":20480,"type":"SCSI","controller":"0","lun":"0"}],"storage":20480,"upgradable":true,"instance_type":null,"time_sync_enabled":true,"copy_paste_enabled":true,"nested_virtualization":false},"error":false,"asset_id":null,"interfaces":[{"id":"nic-2272082-5294456-1","ip":"10.0.0.1","hostname":"win7ent64","mac":"00:50:56:2d:af:af","services_count":0,"services":[],"public_ips_count":0,"public_ips":[],"status":"Busy","vm_name":"Windows
-        7 Enterprise SP1 64-bit - Sysprepped","vm_id":"5243224","network_name":"Network
-        1","network_subnet":"10.0.0.0/24","network_id":"2386484","network_type":"automatic","nic_type":"e1000","promiscuous":false}],"notes":[],"labels":[],"credentials":[],"desktop_resizable":true,"local_mouse_cursor":true,"maintenance_lock_engaged":false,"region_backend":"skytap","created_at":"2015/04/22
-        05:44:00 -0700","can_change_object_state":true,"configuration_url":"https://cloud.skytap.com/configurations/3889160"}],"networks":[{"id":"2386484","url":"https://cloud.skytap.com/configurations/3889160/networks/2386484","name":"Network
-        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[]}],"lockversion":"19d9bc32b2ef634d86799519ea1cc366dd6515b1","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/99734","publish_sets":[{"desktops_url":"http://bogus_desktops_url"}]}'
-    http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:02 GMT
-- request:
-    method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/schedules
-    body:
-      encoding: UTF-8
-      string: '{"title":"Schedule for Windows 7 Enterprise SP1 64-bit - Sysprepped
-        - [3889160]","configuration_id":"3889160","start_at":"2015-04-22T12:44:02.668Z","end_at":"2015-04-29T12:43:53.584Z","delete_at_end":true,"time_zone":"UTC"}'
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '223'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 22 Apr 2015 12:44:04 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Vary:
-      - Accept-Encoding
-      Status:
-      - 200 OK
-      X-Runtime:
-      - '0.639403'
-      Etag:
-      - W/"1d3bd3398ace2f019164765ee1cc0d7d"
+      - https://cloud.skytap.com/configurations/5282852
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic2Vzc2lvbl9pZCI6ImZiZWU1N2IzOWQ5ZDQ2NWQ0Mzg1ZTE5MTFlOTQ1ZTc1IiwiX2NzcmZfdG9rZW4iOiJaaTFpZGNoSUphekhwYTZDaXl2dW9xd1VUNHhibEhyMUNZZ3ZQL2VzVlBnPSIsInRpbWUiOjE0Mjk3MDY2NDMsInNzb19sb2dpbl9yZWRpcmVjdF9wYXJhbXMiOm51bGwsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTJ9--836831587406bc5b0d6a45a9a8494b45ce3e302e;
-        path=/; secure
-      X-Request-Id:
-      - c86c34a39b249f2999f30ad9f040344b
+      Etag:
+      - W/"3cd107ba3440d04f2f97f95f91bf9f76"
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJXMERsTU9yVTI3V3R4b2dBVkUyZ0RwWDVmdE5OWHRsZkxBNDJNM1BKZG9nPSIsInRpbWUiOjE0NDExNTY5MjIsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiIxOTEwZjY0MzRlODZlNGFkOWE2OTFkOTU0MGIxOTI4MSJ9--d3d3b5dfc4142e3c177b5c7b0b4ead76ccbf19be;
+        path=/; secure
+      X-Request-Id:
+      - 5f08fa36ede2fb83455bef9a6a72f940
+      X-Runtime:
+      - '5.729927'
       X-Rack-Cache:
       - invalidate, pass
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"320870","url":"https://cloud.skytap.com/schedules/320870","title":"Schedule
-        for Windows 7 Enterprise SP1 64-bit - Sysprepped - [3889160]","time_zone":"UTC","start_at":"2015/04/22
-        12:44:02 +0000","end_at":"2015/04/29 12:43:53 +0000","notify_user":false,"delete_at_end":true,"executions":[],"recurring_days":[],"actions":[],"next_action_name":"delete","next_action_time":"2015/04/22
-        05:44:02 -0700","user":{"id":"99734","url":"https://cloud.skytap.com/users/99734","login_name":"martin@skytap.com","first_name":"Martin","last_name":"Goldman","email":"martin@skytap.com","role":"admin","deleted":false},"region":"US-East","vm_ids":null,"configuration_id":"3889160","configuration_url":"https://cloud.skytap.com/configurations/3889160","configuration_name":"Windows
-        7 Enterprise SP1 64-bit - Sysprepped"}'
+      string: '{"id":"5282852","url":"https://cloud.skytap.com/configurations/5282852","name":"Demo
+        Environment Template 2","error":"","runstate":"busy","description":"Windows
+        7 Enterprise SP1 64-bit with Skytap Helper and IE9; All Windows Updates installed;
+        Sysprepped","suspend_on_idle":null,"routable":false,"vms":[{"id":"6699682","name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","runstate":"busy","hardware":{"cpus":1,"supports_multicore":false,"cpus_per_socket":1,"ram":1024,"svms":1,"guestOS":"windows7-64","max_cpus":12,"min_ram":256,"max_ram":131072,"vnc_keymap":null,"uuid":null,"disks":[{"id":"disk-2946506-6791768-scsi-0-0","size":20480,"type":"SCSI","controller":"0","lun":"0"}],"storage":20480,"upgradable":true,"instance_type":null,"time_sync_enabled":true,"copy_paste_enabled":true,"nested_virtualization":false},"error":false,"asset_id":null,"interfaces":[{"id":"nic-2946506-6791768-1","ip":"10.0.0.1","hostname":"win7ent64","mac":"00:50:56:2d:af:af","services_count":0,"services":[],"public_ips_count":0,"public_ips":[],"vm_id":"6699682","vm_name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","status":"Busy","network_id":"3136084","network_name":"Network
+        1","network_url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","network_type":"automatic","network_subnet":"10.0.0.0/24","nic_type":"e1000","promiscuous":false}],"notes":[],"labels":[],"credentials":[],"desktop_resizable":true,"local_mouse_cursor":true,"maintenance_lock_engaged":false,"region_backend":"skytap","created_at":"2015/09/01
+        18:22:07 -0700","can_change_object_state":true,"configuration_url":"https://cloud.skytap.com/configurations/5282852","publish_set_refs":["https://cloud.skytap.com/configurations/5282852/publish_sets/1258854"]}],"networks":[{"id":"3136084","url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","name":"Network
+        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[]}],"lockversion":"d9bf96565bfee44a123a942bcd4330f0e747ef05","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/99734","publish_sets":[{"id":"1258854","name":"New
+        publish set","url":"https://cloud.skytap.com/configurations/5282852/publish_sets/1258854","publish_set_type":"single_url","runtime_limit":null,"runtime_left_in_seconds":null,"expiration_date":null,"expiration_date_tz":null,"start_time":null,"end_time":null,"time_zone":null,"multiple_url":false,"password":null,"desktops_url":"https://cloud.skytap.com/vms/d2d8aca1035148680a3c75b380ef41f5/desktop","use_smart_client":true,"vms":[{"id":"3426772","name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","access":"use","run_and_use":false,"vm_ref":"https://cloud.skytap.com/vms/6699682","desktop_url":"https://cloud.skytap.com/vms/d2d8aca1035148680a3c75b380ef41f5/desktops"}]}]}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:04 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:08 GMT
 - request:
     method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/tunnels?source_network_id=2386484&target_network_id=2298252
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/projects/37814/configurations/5282852
     body:
       encoding: UTF-8
       string: ''
@@ -150,7 +91,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:07 GMT
+      - Wed, 02 Sep 2015 01:22:09 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -161,34 +102,33 @@ http_interactions:
       - Accept-Encoding
       Status:
       - 200 OK
-      X-Rack-Cache:
-      - invalidate, pass
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - f56462e9d497ec31dfe48b9e45b9bf3b
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwiX2NzcmZfdG9rZW4iOiI1Y25XNm41a1pET2RpN1dDY05haEhmZjk5UEZPZjlCc1Bkb0FpR1NYTFdRPSIsInRpbWUiOjE0Mjk3MDY2NDUsInNlc3Npb25faWQiOiI2NDU1MGZhYjc2OGRjYzc3OGE4NDdjZTQzM2E1NWNiZiIsInNzb19sb2dpbl9yZWRpcmVjdF9wYXJhbXMiOm51bGwsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTJ9--274d8dba66c611c050158731b318d173ab3be30c;
-        path=/; secure
       Etag:
-      - W/"53951cb2c855349f9fa1c1789da424cd"
+      - W/"46559e0dd1510151638836358f71a820"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJ0T3IxMjQ5QlNQOVU5bElGdEd0dTdZV0xNYmZNL0RaaU5DUUlBQzF5dWtzPSIsInRpbWUiOjE0NDExNTY5MjgsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiJiODk0YjNjOTNmN2I0YzE0Yjg0ODcwZTM4Y2U0OTBlNiJ9--b33eb0c2787cbf31e479e2fe7dc0fba98280f778;
+        path=/; secure
+      X-Request-Id:
+      - 97306094425160b58debf3dba2546422
       X-Runtime:
-      - '2.353395'
+      - '0.471465'
+      X-Rack-Cache:
+      - invalidate, pass
     body:
       encoding: ASCII-8BIT
-      string: '{"status":"not_busy","source_network":{"id":"2298252","url":"https://cloud.skytap.com/configurations/3748200/networks/2298252","name":"Demo
-        Creator Development Global Net","network_type":"automatic","subnet":"10.10.10.0/24","subnet_addr":"10.10.10.0","subnet_size":24,"gateway":"10.10.10.1","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","nat_pool_size":1022,"nat_pool_remaining":1020,"nat_subnet":"10.0.4.0/22","domain":"skytap.example","vpn_attachments":[]},"target_network":{"id":"2386484","url":"https://cloud.skytap.com/configurations/3889160/networks/2386484","name":"Network
-        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[]},"error":null,"id":"tunnel-2358924-2449680"}'
+      string: '{"id":"5282852","url":"https://cloud.skytap.com/configurations/5282852","name":"Demo
+        Environment Template 2","error":""}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:07 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:09 GMT
 - request:
     method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/users
     body:
       encoding: UTF-8
-      string: '{"login_name":"me-skytap-com@shadow-user.customer-name.com","first_name":"me-skytap-com","last_name":"shadow-user","password":"0771645d95977c643572f7ff48335f43","email":"me@skytap.com"}'
+      string: '{"login_name":"me-skytap-com","first_name":"me-skytap-com","last_name":"shadow-user","password":"6e683537c2629748e0b22f23857f3cd3","email":"me@skytap.com"}'
     headers:
       Accept:
       - application/json
@@ -197,7 +137,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '191'
+      - '155'
       User-Agent:
       - Ruby
   response:
@@ -208,7 +148,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:10 GMT
+      - Wed, 02 Sep 2015 01:22:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -219,32 +159,32 @@ http_interactions:
       - Accept-Encoding
       Status:
       - 200 OK
-      X-Rack-Cache:
-      - invalidate, pass
+      Location:
+      - https://cloud.skytap.com/users/129818
       X-Ua-Compatible:
       - IE=Edge,chrome=1
+      Etag:
+      - W/"61970079a5a97a4171870a39f00e935c"
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Location:
-      - https://cloud.skytap.com/users/113516
-      X-Runtime:
-      - '1.501381'
-      X-Request-Id:
-      - 6cbb4c7eae3fb19c03b8bbc03b8cdcbf
-      Etag:
-      - W/"fee4c6d402cc0d5a7d8b9cd339a9ff92"
       Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic2Vzc2lvbl9pZCI6IjhlNGNiYTY0Y2JhMjhmNzBjYjI3ZmE5MmRmNjQwMTRmIiwicmVicmFuZF9jdXN0b21lciI6NzA5MiwiX2NzcmZfdG9rZW4iOiJSb3piTi8zdmV6NmlXSFlqU0Vrb1BMMnlaZG9UeEg2d0RnS1gzSmM2VnhvPSIsInNzb19sb2dpbl9yZWRpcmVjdF9wYXJhbXMiOm51bGwsInRpbWUiOjE0Mjk3MDY2NDh9--43abce85faedb8320377969d6f031d5edd3f00a9;
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJrQUVtb1ZxT08yQ2lyMGptWmNnSTUvL3IvaEMxMmFvQ0htdnhCUjdvN2dvPSIsInRpbWUiOjE0NDExNTY5MjksInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiJlM2I2OGI3NzY0MDRiOGEwYjcyNDgwODliMGJjYTEyYiJ9--4581e1ee9a133cfd149068b62d2196f7313db11c;
         path=/; secure
+      X-Request-Id:
+      - bd7f9ad849c2d8f9a7ba9d696a01f435
+      X-Runtime:
+      - '1.443359'
+      X-Rack-Cache:
+      - invalidate, pass
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"113516","url":"https://cloud.skytap.com/users/113516","login_name":"me-skytap-com@shadow-user.customer-name.com","first_name":"me-skytap-com","last_name":"shadow-user","title":null,"email":"me@skytap.com","created_at":"2015-04-22T05:44:09-07:00","deleted":false,"activated":true,"password":"**********","account_role":"standard_user","quotas":[{"id":"concurrent_storage_size","quota_type":"concurrent_storage_size","units":"MB","limit":null,"usage":0},{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":null,"usage":0},{"id":"concurrent_vms","quota_type":"concurrent_vms","units":"integer","limit":null,"usage":0},{"id":"cumulative_svms","quota_type":"cumulative_svms","units":"hours","limit":null,"usage":0.0}],"configurations":[],"templates":[],"assets":[],"lockversion":"bc48962af97e93bbb48ff24783dfd6003e7ebc17","can_export":false,"can_import":false,"time_zone":"Pacific
+      string: '{"id":"129818","url":"https://cloud.skytap.com/users/129818","login_name":"me-skytap-com","first_name":"me-skytap-com","last_name":"shadow-user","title":null,"email":"me@skytap.com","created_at":"2015-09-01T18:22:10-07:00","deleted":false,"activated":true,"password":"**********","account_role":"standard_user","quotas":[{"id":"concurrent_vms","quota_type":"concurrent_vms","units":"integer","limit":null,"usage":0},{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":null,"usage":0},{"id":"cumulative_svms","quota_type":"cumulative_svms","units":"hours","limit":null,"usage":0.0},{"id":"concurrent_storage_size","quota_type":"concurrent_storage_size","units":"MB","limit":null,"usage":0}],"configurations":[],"templates":[],"assets":[],"lockversion":"53c0b9801d52916ade45f2a14c8434e94c9603c7","can_export":false,"can_import":false,"promiscuous":false,"time_zone":"Pacific
         Time (US & Canada)","has_public_library":true}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:10 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:10 GMT
 - request:
     method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/departments/1110/users/113516
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/departments/1110/users/129818
     body:
       encoding: UTF-8
       string: ''
@@ -265,7 +205,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:13 GMT
+      - Wed, 02 Sep 2015 01:22:14 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -276,30 +216,30 @@ http_interactions:
       - Accept-Encoding
       Status:
       - 200 OK
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"91df939ee226420d51b0e1d080ee826d"
-      X-Request-Id:
-      - a0de30d5778d2f1c1f654a3383ce157a
-      X-Rack-Cache:
-      - invalidate, pass
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwicmVicmFuZF9jdXN0b21lciI6NzA5MiwiX2NzcmZfdG9rZW4iOiJOckhHVDBYYmpzMFo0TUFtbVlMUDJ0UGFSZVJiT1d1YTk2Slc3bEFHelpJPSIsInNzb19sb2dpbl9yZWRpcmVjdF9wYXJhbXMiOm51bGwsInRpbWUiOjE0Mjk3MDY2NTEsInNlc3Npb25faWQiOiIwNTA5MGVlMjU0ODI5ZmRiOTcyYzg5ZDM3Mjc0ODU0YiJ9--16798e52be7baeec922e955b15fa7431f45368e3;
-        path=/; secure
-      X-Runtime:
-      - '1.630919'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
+      Etag:
+      - W/"814377ba4f1be1d4a59fb8eec8dd47af"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJEMEU5Y2xRWHlLQmJIVjRwVjUxQks1RHJydlE5ZGwwQVVjVitDQmI0Z3c0PSIsInRpbWUiOjE0NDExNTY5MzEsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiI5ODBhMDE2ZTUxYjkxOTcyYmZmN2IwZDg2NmRjOGZhNSJ9--327998d2d5925f088b5f52dbea93f0f301d23525;
+        path=/; secure
+      X-Request-Id:
+      - 322a3b48f68eac6603a6fb85a232e240
+      X-Runtime:
+      - '2.637330'
+      X-Rack-Cache:
+      - invalidate, pass
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":"113516","url":"https://cloud.skytap.com/users/113516","first_name":"me-skytap-com","last_name":"shadow-user","login_name":"me-skytap-com@shadow-user.customer-name.com","email":"me@skytap.com","title":null,"deleted":false,"account_role":"standard_user","activated":true,"email_validated":false,"last_login":null,"sso_enabled":false,"department_name":"Fake
+      string: '[{"id":"129818","url":"https://cloud.skytap.com/users/129818","first_name":"me-skytap-com","last_name":"shadow-user","login_name":"me-skytap-com","email":"me@skytap.com","title":null,"deleted":false,"can_add_resources":true,"account_role":"standard_user","activated":true,"email_validated":false,"last_login":null,"sso_enabled":false,"department_name":"Fake
         Department","department_id":"1110"}]'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:13 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:14 GMT
 - request:
     method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users/113516/quotas
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/users/129818/quotas
     body:
       encoding: UTF-8
       string: '{"name":"cumulative_svms","limit":"1234"}'
@@ -322,7 +262,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:15 GMT
+      - Wed, 02 Sep 2015 01:22:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -333,85 +273,29 @@ http_interactions:
       - Accept-Encoding
       Status:
       - 200 OK
-      X-Request-Id:
-      - c99813fbbce8353173f6aa65a698e355
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"d7f39b1c31505ea3a0703f278d3cda3c"
-      X-Runtime:
-      - '1.142259'
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic2Vzc2lvbl9pZCI6IjJiNDM5ZjM4MDI1YzM5M2MyMzg4NDQ3YWIwZjJiMzdjIiwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJyRW5KSE1pK3pkeHk4eHpDUGdvNFNpTjVCem9Nc25rU1VqZ1NwdEY1UDhrPSIsInRpbWUiOjE0Mjk3MDY2NTQsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTJ9--972d55802f751a309b72cd8171b318cdc43b72cc;
-        path=/; secure
       X-Ua-Compatible:
       - IE=Edge,chrome=1
+      Etag:
+      - W/"d7f39b1c31505ea3a0703f278d3cda3c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiIwRURiMXNwQXVQNWUybVRoVXczb3lLNlIzZ0RDMHFZV2NnWWt6ZitUaDhjPSIsInRpbWUiOjE0NDExNTY5MzQsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiI3MjhmMWY2MjMyYmVhOGEyOWRhYjdmNTdlNTk5NzE5NSJ9--ea54bb620acdaa4728145a169e2e2d5920808df8;
+        path=/; secure
+      X-Request-Id:
+      - 93c0509dd1d7097650b47830ba053217
+      X-Runtime:
+      - '0.726355'
       X-Rack-Cache:
       - invalidate, pass
     body:
       encoding: ASCII-8BIT
       string: '{"id":"cumulative_svms","quota_type":"cumulative_svms","units":"hours","limit":1234.0,"usage":0.0}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:15 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:15 GMT
 - request:
     method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users/113516/quotas
-    body:
-      encoding: UTF-8
-      string: '{"name":"concurrent_svms","limit":"20"}'
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '39'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 22 Apr 2015 12:44:18 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Vary:
-      - Accept-Encoding
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - b052aa43c2573cf91dbb31e5bbd059b4
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"3e4456f79bef78966037b313ec91f71a"
-      X-Runtime:
-      - '1.837178'
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic2Vzc2lvbl9pZCI6ImI3YTQwOTI3ODVjZTVhMDM4MTRkYTRkMTc3YWNiZjI1Iiwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJvSERhUnFqQjhCajBTb2JpYWo0cEQ4K01vc3FmZmlqK0Z4Y2grRjhDM3lFPSIsInRpbWUiOjE0Mjk3MDY2NTcsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTJ9--c7439fffbcbe2d143ac97191beccf4a541e59222;
-        path=/; secure
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      X-Rack-Cache:
-      - invalidate, pass
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":20.0,"usage":0}'
-    http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:18 GMT
-- request:
-    method: post
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/users/113516/quotas
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/users/129818/quotas
     body:
       encoding: UTF-8
       string: '{"name":"concurrent_storage_size","limit":"80000"}'
@@ -434,7 +318,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:21 GMT
+      - Wed, 02 Sep 2015 01:22:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -447,30 +331,86 @@ http_interactions:
       - 200 OK
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      X-Runtime:
-      - '1.420637'
       Etag:
       - W/"c772739937d1de8735a58d268ce9d8a0"
-      X-Request-Id:
-      - e8141c7c4bd7b784eb3d0ec60660abec
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwic2Vzc2lvbl9pZCI6IjVlYzhhOTIzZWJlOWFlNjg2ZGU1NGYyYjJlNTI4MGE0IiwiX2NzcmZfdG9rZW4iOiJjLzB6d1FFbHhmQUZzT01ydG9HdXN0Y3YvYmR1T1NpeFFudzNrWCthRHp3PSIsInRpbWUiOjE0Mjk3MDY2NTksInJlYnJhbmRfY3VzdG9tZXIiOjcwOTJ9--774f6e2ce7cbcb353bc5ca2e10b52af082e3670d;
-        path=/; secure
-      X-Rack-Cache:
-      - invalidate, pass
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJKYkwxVjNjTWQ1MGtpVEs0T3ZadGNEUThRK1VZa1VrUTJNR0tkOWZ0aVNZPSIsInRpbWUiOjE0NDExNTY5MzUsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiIxMzc5ZGIyNDg1ZmZjZWQ0Nzk0ZTE0Zjc4ODc5YmIyNiJ9--85b8ea531a3ac9cddc5ee799abf0ef570bf88c36;
+        path=/; secure
+      X-Request-Id:
+      - fffb974bab1591427fcf62e5e5a70b55
+      X-Runtime:
+      - '0.635416'
+      X-Rack-Cache:
+      - invalidate, pass
     body:
       encoding: ASCII-8BIT
       string: '{"id":"concurrent_storage_size","quota_type":"concurrent_storage_size","units":"MB","limit":80000.0,"usage":0}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:21 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:16 GMT
 - request:
-    method: put
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/configurations/3889160
+    method: post
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/users/129818/quotas
     body:
       encoding: UTF-8
-      string: '{"owner":"https://cloud.skytap.com/users/113516"}'
+      string: '{"name":"concurrent_svms","limit":"20"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '39'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 02 Sep 2015 01:22:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"3e4456f79bef78966037b313ec91f71a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJ1UW9vQmdJOTJKcGYvMDFWd1YxUFB2cXZlSHNtSGhGdWxHWUJmRisvbkk4PSIsInRpbWUiOjE0NDExNTY5MzcsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiI2MWZjMWI5MTZmNzJkYTg2YzY0MzBjMTEwMGM1ZDUzMiJ9--c8ff766cd89d8496506c959f7b797dc0f0d228ea;
+        path=/; secure
+      X-Request-Id:
+      - 5d4f9be8258de6ede6a97508cb643e37
+      X-Runtime:
+      - '0.649964'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"concurrent_svms","quota_type":"concurrent_svms","units":"integer","limit":20.0,"usage":0}'
+    http_version: 
+  recorded_at: Wed, 02 Sep 2015 01:22:17 GMT
+- request:
+    method: put
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/configurations/5282852
+    body:
+      encoding: UTF-8
+      string: '{"owner":"https://cloud.skytap.com/users/129818"}'
     headers:
       Accept:
       - application/json
@@ -490,7 +430,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:25 GMT
+      - Wed, 02 Sep 2015 01:22:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -503,41 +443,40 @@ http_interactions:
       - 200 OK
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      X-Runtime:
-      - '3.786668'
       Etag:
-      - W/"d12e279a53ac82711537207aaa7bdba3"
-      X-Request-Id:
-      - 44d42d58b42f217fce04d7f299fec347
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwic2Vzc2lvbl9pZCI6ImEwODdiNDQwYzE3NWZiNzRmY2M2N2JiNGIzMGI0ODIxIiwiX2NzcmZfdG9rZW4iOiJJaFVYbUhvRzEwbTRndGt5TG9QR0M3OG0wczNzdVU3UTFWVmh5bVhLVUlzPSIsInRpbWUiOjE0Mjk3MDY2NjIsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTJ9--591c4a9c7bcce51a510d6d46abbd99be91fd9f1d;
-        path=/; secure
-      X-Rack-Cache:
-      - invalidate, pass
+      - W/"686f4b290fca9d4aaf42af2a62536343"
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJOUmdIS1JYRi91RjUzZytmbE5vV3hkMWF6dUR5bzB0WjA0U29Fcy9rWmxjPSIsInRpbWUiOjE0NDExNTY5MzgsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiIyOGNjZTY5MzA4OWMxNWJlNGQ3NzQ5Yjc5NWY4MzIzOCJ9--484ba870503d7ef997e30c00105d42a1bfbf9257;
+        path=/; secure
+      X-Request-Id:
+      - 49c89342780cb15ec5b445071dbfb554
+      X-Runtime:
+      - '3.251127'
+      X-Rack-Cache:
+      - invalidate, pass
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"3889160","url":"https://cloud.skytap.com/configurations/3889160","name":"Windows
-        7 Enterprise SP1 64-bit - Sysprepped","error":"","runstate":"stopped","description":"Windows
+      string: '{"id":"5282852","url":"https://cloud.skytap.com/configurations/5282852","name":"Demo
+        Environment Template 2","error":"","runstate":"stopped","description":"Windows
         7 Enterprise SP1 64-bit with Skytap Helper and IE9; All Windows Updates installed;
-        Sysprepped","suspend_on_idle":null,"routable":false,"vms":[{"id":"5243224","name":"Windows
-        7 Enterprise SP1 64-bit - Sysprepped","runstate":"stopped","hardware":{"cpus":1,"supports_multicore":false,"cpus_per_socket":1,"ram":1024,"svms":1,"guestOS":"windows7-64","max_cpus":12,"min_ram":256,"max_ram":131072,"vnc_keymap":null,"uuid":null,"disks":[{"id":"disk-2272082-5294456-scsi-0-0","size":20480,"type":"SCSI","controller":"0","lun":"0"}],"storage":20480,"upgradable":true,"instance_type":null,"time_sync_enabled":true,"copy_paste_enabled":true,"nested_virtualization":false},"error":false,"asset_id":null,"interfaces":[{"id":"nic-2272082-5294456-1","ip":"10.0.0.1","hostname":"win7ent64","mac":"00:50:56:2d:af:af","services_count":0,"services":[],"public_ips_count":0,"public_ips":[],"status":"Powered
-        off","vm_name":"Windows 7 Enterprise SP1 64-bit - Sysprepped","vm_id":"5243224","nat_addresses":{"network_nat_addresses":[{"ip_address":"10.0.4.2","network_id":2298252}],"vpn_nat_addresses":[]},"network_name":"Network
-        1","network_id":"2386484","network_subnet":"10.0.0.0/24","network_type":"automatic","nic_type":"e1000","promiscuous":false}],"notes":[],"labels":[],"credentials":[],"desktop_resizable":true,"local_mouse_cursor":true,"maintenance_lock_engaged":false,"region_backend":"skytap","created_at":"2015/04/22
-        05:44:00 -0700","can_change_object_state":true,"configuration_url":"https://cloud.skytap.com/configurations/3889160"}],"networks":[{"id":"2386484","url":"https://cloud.skytap.com/configurations/3889160/networks/2386484","name":"Network
-        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[{"source_network":{"id":"2298252","url":"https://cloud.skytap.com/configurations/3748200/networks/2298252","name":"Demo
-        Creator Development Global Net","network_type":"automatic","subnet":"10.10.10.0/24","subnet_addr":"10.10.10.0","subnet_size":24,"gateway":"10.10.10.1","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","nat_pool_size":1022,"nat_pool_remaining":1020,"nat_subnet":"10.0.4.0/22","domain":"skytap.example","vpn_attachments":[]},"error":null,"id":"tunnel-2358924-2449680","status":"not_busy","target_network":{"id":"2386484","url":"https://cloud.skytap.com/configurations/3889160/networks/2386484","name":"Network
-        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[]}}]}],"lockversion":"19d9bc32b2ef634d86799519ea1cc366dd6515b1","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/113516","publish_sets":[]}'
+        Sysprepped","suspend_on_idle":null,"routable":false,"vms":[{"id":"6699682","name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","runstate":"stopped","hardware":{"cpus":1,"supports_multicore":false,"cpus_per_socket":1,"ram":1024,"svms":1,"guestOS":"windows7-64","max_cpus":12,"min_ram":256,"max_ram":131072,"vnc_keymap":null,"uuid":null,"disks":[{"id":"disk-2946506-6791768-scsi-0-0","size":20480,"type":"SCSI","controller":"0","lun":"0"}],"storage":20480,"upgradable":true,"instance_type":null,"time_sync_enabled":true,"copy_paste_enabled":true,"nested_virtualization":false},"error":false,"asset_id":null,"interfaces":[{"id":"nic-2946506-6791768-1","ip":"10.0.0.1","hostname":"win7ent64","mac":"00:50:56:2d:af:af","services_count":0,"services":[],"public_ips_count":0,"public_ips":[],"vm_id":"6699682","vm_name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","status":"Powered off","network_id":"3136084","network_name":"Network
+        1","network_url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","network_type":"automatic","network_subnet":"10.0.0.0/24","nic_type":"e1000","promiscuous":false}],"notes":[],"labels":[],"credentials":[],"desktop_resizable":true,"local_mouse_cursor":true,"maintenance_lock_engaged":false,"region_backend":"skytap","created_at":"2015/09/01
+        18:22:07 -0700","can_change_object_state":true,"configuration_url":"https://cloud.skytap.com/configurations/5282852","publish_set_refs":["https://cloud.skytap.com/configurations/5282852/publish_sets/1258854"]}],"networks":[{"id":"3136084","url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","name":"Network
+        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[]}],"lockversion":"d9bf96565bfee44a123a942bcd4330f0e747ef05","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/129818","publish_sets":[{"id":"1258854","name":"New
+        publish set","url":"https://cloud.skytap.com/configurations/5282852/publish_sets/1258854","publish_set_type":"single_url","runtime_limit":null,"runtime_left_in_seconds":null,"expiration_date":null,"expiration_date_tz":null,"start_time":null,"end_time":null,"time_zone":null,"multiple_url":false,"password":null,"desktops_url":"https://cloud.skytap.com/vms/d2d8aca1035148680a3c75b380ef41f5/desktop","use_smart_client":true,"vms":[{"id":"3426772","name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","access":"use","run_and_use":false,"vm_ref":"https://cloud.skytap.com/vms/6699682","desktop_url":"https://cloud.skytap.com/vms/d2d8aca1035148680a3c75b380ef41f5/desktops"}]}]}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:26 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:21 GMT
 - request:
-    method: put
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/configurations/3889160
+    method: post
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/schedules
     body:
       encoding: UTF-8
-      string: '{"name":"Demo Environment - Windows 7 Enterprise SP1 64-bit - Sysprepped
-        - me@skytap.com - ","runstate":"running"}'
+      string: '{"title":"Schedule for Demo Environment Template 2 - [5282852]","configuration_id":"5282852","start_at":"2015-09-02T01:22:21.293Z","end_at":"2015-09-09T01:22:00.501Z","delete_at_end":true,"time_zone":"UTC"}'
     headers:
       Accept:
       - application/json
@@ -546,7 +485,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '116'
+      - '206'
       User-Agent:
       - Ruby
   response:
@@ -557,7 +496,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 22 Apr 2015 12:44:28 GMT
+      - Wed, 02 Sep 2015 01:22:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -568,34 +507,155 @@ http_interactions:
       - Accept-Encoding
       Status:
       - 200 OK
-      Set-Cookie:
-      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJ4eFh0RnBjR2lBcE9RTWRoYW9YWkNlSWhtL3dvUnpTNDBVQTQ1VldFWWN3PSIsInRpbWUiOjE0Mjk3MDY2NjcsImZsYXNoIjp7InVzZWQiOnt9LCJmbGFzaGVzIjp7Im11bHRpc2VsZWN0X2lkcyI6bnVsbH19LCJyZWJyYW5kX2N1c3RvbWVyIjo3MDkyLCJzZXNzaW9uX2lkIjoiMzNlOTUwOWUxMDM1MTExYWQ4NmQ2MmVkZmRmMmY3NjYifQ%3D%3D--27119a399ed3ebd46b95f033af16e535aed12cd4;
-        path=/; secure
       X-Ua-Compatible:
       - IE=Edge,chrome=1
+      Etag:
+      - W/"6ca35adaa3afd23c3b59fb84c3e084de"
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Etag:
-      - W/"59b19c369d251533b726f4e474ac6860"
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiIzSHdIbUVXNE9TK3hvY3B0YjJSUzFQSmE1TkkxeXZEMitxdlJQVUNtMW5VPSIsInRpbWUiOjE0NDExNTY5NDIsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiJlZDk2ZjY2ZjMxMmJkNWFmYTZiZmI3OGEzYzM4Njk4NyJ9--91b81b161fa91fe63998d4d3d5971425f6fb047a;
+        path=/; secure
       X-Request-Id:
-      - 9900c1143d18c3257c33e39bf9b46168
+      - 69ece1ce28d060bcaabc0ba8fe5ce19b
       X-Runtime:
-      - '1.650931'
+      - '0.378273'
       X-Rack-Cache:
       - invalidate, pass
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"3889160","url":"https://cloud.skytap.com/configurations/3889160","name":"Demo
-        Environment - Windows 7 Enterprise SP1 64-bit - Sysprepped - me@skytap.com
-        - ","error":"","runstate":"busy","description":"Windows 7 Enterprise SP1 64-bit
-        with Skytap Helper and IE9; All Windows Updates installed; Sysprepped","suspend_on_idle":null,"routable":false,"vms":[{"id":"5243224","name":"Windows
-        7 Enterprise SP1 64-bit - Sysprepped","runstate":"stopped","hardware":{"cpus":1,"supports_multicore":false,"cpus_per_socket":1,"ram":1024,"svms":1,"guestOS":"windows7-64","max_cpus":12,"min_ram":256,"max_ram":131072,"vnc_keymap":null,"uuid":null,"disks":[{"id":"disk-2272082-5294456-scsi-0-0","size":20480,"type":"SCSI","controller":"0","lun":"0"}],"storage":20480,"upgradable":true,"instance_type":null,"time_sync_enabled":true,"copy_paste_enabled":true,"nested_virtualization":false},"error":false,"asset_id":null,"interfaces":[{"id":"nic-2272082-5294456-1","ip":"10.0.0.1","hostname":"win7ent64","mac":"00:50:56:2d:af:af","services_count":0,"services":[],"public_ips_count":0,"public_ips":[],"status":"Powered
-        off","vm_name":"Windows 7 Enterprise SP1 64-bit - Sysprepped","vm_id":"5243224","nat_addresses":{"vpn_nat_addresses":[],"network_nat_addresses":[{"network_id":2298252,"ip_address":"10.0.4.2"}]},"network_name":"Network
-        1","network_subnet":"10.0.0.0/24","network_id":"2386484","network_type":"automatic","nic_type":"e1000","promiscuous":false}],"notes":[],"labels":[],"credentials":[],"desktop_resizable":true,"local_mouse_cursor":true,"maintenance_lock_engaged":false,"region_backend":"skytap","created_at":"2015/04/22
-        05:44:00 -0700","can_change_object_state":true,"configuration_url":"https://cloud.skytap.com/configurations/3889160"}],"networks":[{"id":"2386484","url":"https://cloud.skytap.com/configurations/3889160/networks/2386484","name":"Network
-        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[{"target_network":{"id":"2386484","url":"https://cloud.skytap.com/configurations/3889160/networks/2386484","name":"Network
-        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[]},"source_network":{"id":"2298252","url":"https://cloud.skytap.com/configurations/3748200/networks/2298252","name":"Demo
-        Creator Development Global Net","network_type":"automatic","subnet":"10.10.10.0/24","subnet_addr":"10.10.10.0","subnet_size":24,"gateway":"10.10.10.1","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","nat_pool_size":1022,"nat_pool_remaining":1020,"nat_subnet":"10.0.4.0/22","domain":"skytap.example","vpn_attachments":[]},"id":"tunnel-2358924-2449680","error":null,"status":"not_busy"}]}],"lockversion":"05276b7b22bc5aeb1b44a9311cb0ab5cf732a666","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/113516","publish_sets":[]}'
+      string: '{"id":"420232","url":"https://cloud.skytap.com/schedules/420232","title":"Schedule
+        for Demo Environment Template 2 - [5282852]","time_zone":"UTC","start_at":"2015/09/02
+        01:22:21 +0000","end_at":"2015/09/09 01:22:00 +0000","notify_user":false,"delete_at_end":true,"executions":[],"recurring_days":[],"actions":[],"next_action_name":"delete","next_action_time":"2015/09/01
+        18:22:21 -0700","user":{"id":"99734","url":"https://cloud.skytap.com/users/99734","login_name":"testuser@example.tld","first_name":"Martin","last_name":"Goldman","email":"testuser@example.tld","role":"admin","deleted":false},"region":"US-East","can_edit":true,"vm_ids":null,"configuration_id":"5282852","configuration_url":"https://cloud.skytap.com/configurations/5282852","configuration_name":"Demo
+        Environment Template 2"}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 12:44:29 GMT
+  recorded_at: Wed, 02 Sep 2015 01:22:22 GMT
+- request:
+    method: post
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/tunnels?source_network_id=3136084&target_network_id=2298252
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 02 Sep 2015 01:22:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"f7d69e7a7fb46ebb5990e22817b937f9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJma05idVZZVE5ndW1nZVJtSC81b1U5d1hyMkpvSEdpNElrY3NqbGN6dmVjPSIsInRpbWUiOjE0NDExNTY5NDMsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsInNlc3Npb25faWQiOiI0N2I5ZjVlNzVhNDdhYmNmYTk2MjM0NmNkYmU0ZjQ4MiJ9--c4d5c81b6b16848b6a0e9f2615b56b1655a19a13;
+        path=/; secure
+      X-Request-Id:
+      - 3c14e9ab2ec001358d0a8dbf331112e7
+      X-Runtime:
+      - '1.222089'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"tunnel-2358924-3211624","status":"not_busy","error":null,"source_network":{"id":"2298252","url":"https://cloud.skytap.com/configurations/3748200/networks/2298252","name":"Demo
+        Creator Development Global Net","network_type":"automatic","subnet":"10.10.10.0/24","subnet_addr":"10.10.10.0","subnet_size":24,"gateway":"10.10.10.1","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","nat_subnet":"10.0.4.0/22","nat_pool_size":1022,"nat_pool_remaining":1020,"domain":"skytap.example","vpn_attachments":[]},"target_network":{"id":"3136084","url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","name":"Network
+        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[]}}'
+    http_version: 
+  recorded_at: Wed, 02 Sep 2015 01:22:24 GMT
+- request:
+    method: put
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/configurations/5282852
+    body:
+      encoding: UTF-8
+      string: '{"name":"Demo Environment - Demo Environment Template 2 - me@skytap.com  -
+        my kewl demo","runstate":"running"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '110'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 02 Sep 2015 01:22:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Status:
+      - 200 OK
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"9bd672e82162f7efc76dee9e46cd30c4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _cloud_session=eyJ1c2VyIjo5OTczNCwic3NvX2xvZ2luX3JlZGlyZWN0X3BhcmFtcyI6bnVsbCwiX2NzcmZfdG9rZW4iOiJQd2pIczVUZ1FySGk1T3NPblVXVE4wZ1lnUmVUckw4Tjk1L1krT2MybURNPSIsInRpbWUiOjE0NDExNTY5NDQsInJlYnJhbmRfY3VzdG9tZXIiOjcwOTIsImZsYXNoIjp7InVzZWQiOnt9LCJmbGFzaGVzIjp7Im11bHRpc2VsZWN0X2lkcyI6bnVsbH19LCJzZXNzaW9uX2lkIjoiODNjYTIzZWEzYWI3NDY0NWY5YTA4NjU5M2IxZWY2YWYifQ%3D%3D--2bc1fe77ce6ddb360dc2ee3ec86ab83f32b78465;
+        path=/; secure
+      X-Request-Id:
+      - 8648a05b5c2fa98c473af725b397d162
+      X-Runtime:
+      - '0.950215'
+      X-Rack-Cache:
+      - invalidate, pass
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"5282852","url":"https://cloud.skytap.com/configurations/5282852","name":"Demo
+        Environment - Demo Environment Template 2 - me@skytap.com  - my kewl demo","error":"","runstate":"busy","description":"Windows
+        7 Enterprise SP1 64-bit with Skytap Helper and IE9; All Windows Updates installed;
+        Sysprepped","suspend_on_idle":null,"routable":false,"vms":[{"id":"6699682","name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","runstate":"stopped","hardware":{"cpus":1,"supports_multicore":false,"cpus_per_socket":1,"ram":1024,"svms":1,"guestOS":"windows7-64","max_cpus":12,"min_ram":256,"max_ram":131072,"vnc_keymap":null,"uuid":null,"disks":[{"id":"disk-2946506-6791768-scsi-0-0","size":20480,"type":"SCSI","controller":"0","lun":"0"}],"storage":20480,"upgradable":true,"instance_type":null,"time_sync_enabled":true,"copy_paste_enabled":true,"nested_virtualization":false},"error":false,"asset_id":null,"interfaces":[{"id":"nic-2946506-6791768-1","ip":"10.0.0.1","hostname":"win7ent64","mac":"00:50:56:2d:af:af","services_count":0,"services":[],"public_ips_count":0,"public_ips":[],"vm_id":"6699682","vm_name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","status":"Powered off","nat_addresses":{"network_nat_addresses":[{"ip_address":"10.0.4.2","network_id":2298252,"network_name":"Demo
+        Creator Development Global Net","network_url":"https://cloud.skytap.com/configurations/3748200/networks/2298252","configuration_id":3748200,"configuration_name":"Demo
+        Creator Development Global Net","configuration_url":"https://cloud.skytap.com/configurations/3748200","viewable":true}],"vpn_nat_addresses":[]},"network_id":"3136084","network_name":"Network
+        1","network_url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","network_type":"automatic","network_subnet":"10.0.0.0/24","nic_type":"e1000","promiscuous":false}],"notes":[],"labels":[],"credentials":[],"desktop_resizable":true,"local_mouse_cursor":true,"maintenance_lock_engaged":false,"region_backend":"skytap","created_at":"2015/09/01
+        18:22:07 -0700","can_change_object_state":true,"configuration_url":"https://cloud.skytap.com/configurations/5282852","publish_set_refs":["https://cloud.skytap.com/configurations/5282852/publish_sets/1258854"]}],"networks":[{"id":"3136084","url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","name":"Network
+        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[],"tunnelable":false,"tunnels":[{"id":"tunnel-2358924-3211624","status":"not_busy","error":null,"source_network":{"id":"2298252","url":"https://cloud.skytap.com/configurations/3748200/networks/2298252","name":"Demo
+        Creator Development Global Net","network_type":"automatic","subnet":"10.10.10.0/24","subnet_addr":"10.10.10.0","subnet_size":24,"gateway":"10.10.10.1","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","nat_subnet":"10.0.4.0/22","nat_pool_size":1022,"nat_pool_remaining":1020,"domain":"skytap.example","vpn_attachments":[]},"target_network":{"id":"3136084","url":"https://cloud.skytap.com/configurations/5282852/networks/3136084","name":"Network
+        1","network_type":"automatic","subnet":"10.0.0.0/24","subnet_addr":"10.0.0.0","subnet_size":24,"gateway":"10.0.0.254","primary_nameserver":null,"secondary_nameserver":null,"region":"US-East","domain":"skytap.example","vpn_attachments":[]}}]}],"lockversion":"231cee76375d17264cf50f9a33e765d693426091","use_smart_client":true,"disable_internet":false,"region":"US-East","region_backend":"skytap","owner":"https://cloud.skytap.com/users/129818","publish_sets":[{"id":"1258854","name":"New
+        publish set","url":"https://cloud.skytap.com/configurations/5282852/publish_sets/1258854","publish_set_type":"single_url","runtime_limit":null,"runtime_left_in_seconds":null,"expiration_date":null,"expiration_date_tz":null,"start_time":null,"end_time":null,"time_zone":null,"multiple_url":false,"password":null,"desktops_url":"https://cloud.skytap.com/vms/d2d8aca1035148680a3c75b380ef41f5/desktop","use_smart_client":true,"vms":[{"id":"3426772","name":"Windows
+        7 Enterprise SP1 64-bit - Sysprepped","access":"use","run_and_use":false,"vm_ref":"https://cloud.skytap.com/vms/6699682","desktop_url":"https://cloud.skytap.com/vms/d2d8aca1035148680a3c75b380ef41f5/desktops"}]}]}'
+    http_version: 
+  recorded_at: Wed, 02 Sep 2015 01:22:25 GMT
 recorded_with: VCR 2.9.3

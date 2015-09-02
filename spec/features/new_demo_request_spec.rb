@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "DemoRequests", type: :feature do
   before do
     ActionMailer::Base.deliveries.clear
-    t = Template.create!(name: "Windows 7 Enterprise SP1 64-bit - Sysprepped", skytap_id: 248757, region_name: 'US-East')
+    t = Template.create!(name: "Demo Environment Template 2", skytap_id: 557145, region_name: 'US-East')
   end
 
   scenario "User requests demo with bad info" do
@@ -14,7 +14,7 @@ RSpec.feature "DemoRequests", type: :feature do
 
   scenario 'User requests demo successfully' do
     visit root_path
-    select 'Windows 7 Enterprise SP1 64-bit - Sysprepped', from: 'Template'
+    select 'Demo Environment Template 2', from: 'Template'
     fill_in 'Email', with: 'me@skytap.com'
     fill_in 'Description', with: 'my kewl demo'
     click_button 'Create Demo'
@@ -34,7 +34,7 @@ RSpec.feature "DemoRequests", type: :feature do
 
   scenario 'Use requests demo successfully with JS', js: true do
     visit root_path
-    select 'Windows 7 Enterprise SP1 64-bit - Sysprepped', from: 'Template'
+    select 'Demo Environment Template 2', from: 'Template'
     fill_in 'Email', with: 'me@skytap.com'
     fill_in 'Description', with: 'my kewl demo'
     click_button 'Create Demo'

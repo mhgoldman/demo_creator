@@ -25,7 +25,7 @@ smtp_dom: "DOMAIN_GOES_HERE"
 
 test:
   skytap_api_user: "testuser@example.tld"
-  skytap_api_key: "8135cd4229746c8741076a75e53f7ba979642764"
+  skytap_api_key: "somepassword"
   poll_interval_ms: "0"
   domain_whitelist: "skytap.com"
   url_hostname: "localhost:3001"

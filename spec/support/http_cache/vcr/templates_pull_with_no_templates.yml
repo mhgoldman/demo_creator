@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://testuser%40example.tld:8135cd4229746c8741076a75e53f7ba979642764@cloud.skytap.com/projects/37878/templates
+    uri: https://testuser%40example.tld:somepassword@cloud.skytap.com/projects/37878/templates
     body:
       encoding: US-ASCII
       string: ''
