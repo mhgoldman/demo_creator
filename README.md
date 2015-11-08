@@ -25,8 +25,6 @@ If you don't know how to install Rails and happen to be installing on a Skytap U
 - In the root of your checked-out repo:
 
 ```
-#!bash
-
 bundle install
 rake db:create
 rake db:migrate
